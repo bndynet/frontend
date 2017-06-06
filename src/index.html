@@ -8,6 +8,7 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 
   <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+  <link href="../node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
 
   <% if (webpackConfig.htmlElements.headTags) { %>
   <!-- Configured Head Tags  -->
@@ -30,18 +31,5 @@
   <app>
     Loading...
   </app>
-
-  <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
-  <script>
-    (function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=r;A[l]=A[l]||function(){
-    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=1*new Date();a=n.createElement(g),
-    r=n.getElementsByTagName(g)[0];a.async=1;a.src=u;r.parentNode.insertBefore(a,r)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-71073175-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-
-
 </body>
 </html>

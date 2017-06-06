@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'authLogin',
-  styleUrls: [],
+  styleUrls: ['./login.component.css'],
   templateUrl: './login.component.html'
 })
 
