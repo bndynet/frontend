@@ -84,8 +84,11 @@
     "@angularclass/hmr": "~1.2.2",
     "@angularclass/hmr-loader": "~3.0.2",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
     "http-server": "^0.9.0",
     "ie-shim": "^0.1.0",
+    "material": "^0.1.1",
     "reflect-metadata": "^0.1.10",
     "rxjs": "~5.0.2",
     "zone.js": "0.8.5"
@@ -157,10 +160,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
+    "url": "https://github.com/bndynet/frontend.git"
   },
   "bugs": {
-    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
+    "url": "https://github.com/bndynet/frontend/issues"
   },
   "engines": {
     "node": ">= 4.2.1",

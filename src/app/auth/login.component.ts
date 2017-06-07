@@ -3,12 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'authLogin',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['login.component.scss'],
   templateUrl: './login.component.html'
 })
 
 export class AuthLoginComponent implements OnInit {
   public model = { account: 'Bendy', password: '123456' };
+  public isLoading: boolean = false;
 
   constructor(
     public route: ActivatedRoute
@@ -16,5 +17,7 @@ export class AuthLoginComponent implements OnInit {
 
   public ngOnInit() { }
 
-  public onLogin() { }
+  public onLogin() {
+      this.isLoading = !this.isLoading;
+  }
 }

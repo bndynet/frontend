@@ -1,42 +1,31 @@
-<h1>
-  Name: <input type="text" [(ngModel)]="model.account" /> {{model.account}}
+<md-card>
+  <md-card-header>
+    <div md-card-avatar>
+      <i class="fa fa-user fa-3x"></i>
+    </div>
+    <md-card-title>FRONTEND</md-card-title>
+    <md-card-subtitle>Login</md-card-subtitle>
+  </md-card-header>
 
-</h1>
-<form class="example-form">
-  <md-input-container class="example-full-width">
-    <input mdInput placeholder="Company (disabled)" disabled value="Google">
-  </md-input-container>
+  <md-card-content>
+    <md-progress-spinner *ngIf="isLoading"
+      color="primary"
+      mode="indeterminate">
+    </md-progress-spinner>
+    <div *ngIf="!isLoading">
+      <md-input-container>
+        <input mdInput placeholder="Account" [(ngModel)]="model.account">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput placeholder="Password" [(ngModel)]="model.password">
+      </md-input-container>
+      <md-checkbox>Keep me signed in</md-checkbox>
+    </div>
+  </md-card-content>
 
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="First name">
-    </md-input-container></td>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="Long Last Name That Will Be Truncated">
-    </md-input-container></td>
-  </tr></table>
-
-  <p>
-    <md-input-container class="example-full-width">
-      <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-    </md-input-container>
-    <md-input-container class="example-full-width">
-      <textarea mdInput placeholder="Address 2"></textarea>
-    </md-input-container>
-  </p>
-
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="City">
-    </md-input-container></td>
-    <td><md-input-container class="example-full-width">
-      <input mdInput placeholder="State">
-    </md-input-container></td>
-    <td><md-input-container class="example-full-width">
-      <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-      <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
-    </md-input-container></td>
-  </tr></table>
-</form>
-
-<button md-button>OK</button>
+  <md-card-actions>
+    <button md-raised-button class="mat-primary" (click)="onLogin()">
+      <i class="fa fa-sign-in"></i> Log In
+    </button>
+  </md-card-actions>
+</md-card>

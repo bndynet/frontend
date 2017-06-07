@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdInputModule } from '@angular/material';
+import { MaterialModule, MdIconRegistry } from '@angular/material';
+import 'hammerjs';
 import {
   NgModule,
   ApplicationRef
@@ -33,7 +34,7 @@ import { XLargeDirective } from './home/x-large';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
-import {AuthLoginComponent} from "./auth/login.component";
+import { AuthLoginComponent } from "./auth/login.component";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -69,7 +70,7 @@ type StoreType = {
     HttpModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-    MdButtonModule, MdInputModule
+    MaterialModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.
@@ -82,9 +83,12 @@ type StoreType = {
 export class AppModule {
 
   constructor(
+    public mdIconRegistry: MdIconRegistry,
     public appRef: ApplicationRef,
     public appState: AppState
-  ) {}
+  ) {
+    mdIconRegistry.registerFontClassAlias('fontawesome', 'fa');
+  }
 
   public hmrOnInit(store: StoreType) {
     if (!store || !store.state) {

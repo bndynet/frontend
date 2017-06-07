@@ -1,0 +1,29 @@
+md-card {
+  width: 360px;
+  margin: 50px auto;
+
+  md-card-title {
+    font-size: 1.2em;
+  }
+
+  md-input-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  md-card-content {
+    height: 144px;
+
+    md-progress-spinner {
+      width: 100%;
+    }
+  }
+
+  .mat-card-actions {
+    margin: 0;
+
+    button {
+      width: 100%;
+    }
+  }
+}
