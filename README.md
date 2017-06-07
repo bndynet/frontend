@@ -23,10 +23,10 @@
 ```bash
 # clone our repo
 # --depth 1 removes all but one .git commit history
-git clone --depth 1 https://github.com/AngularClass/angular-starter.git
+git clone https://github.com/bndynet/frontend.git
 
 # change directory to our repo
-cd angular-starter
+cd frontend
 
 # install the repo with npm
 npm install
@@ -51,7 +51,6 @@ go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http
 * [Configuration](#configuration)
 * [AoT Don'ts](#aot-donts)
 * [External Stylesheets](#external-stylesheets)
-* [Contributing](#contributing)
 * [TypeScript](#typescript)
 * [@Types](#types)
 * [Frequently asked questions](#frequently-asked-questions)
@@ -213,9 +212,6 @@ For example to use Bootstrap as an external stylesheet:
 3) In `styles.scss` add `@import 'bootstrap/scss/bootstrap.scss';`
 4) In `src/app/app.module.ts` add underneath the other import statements: `import '../styles/styles.scss';`
 
-# Contributing
-You can include more examples as components but they must introduce a new concept such as `Home` component (separate folders), and Todo (services). I'll accept pretty much everything so feel free to open a Pull-Request
-
 # TypeScript
 > To take full advantage of TypeScript with autocomplete you would have to install it globally and use an editor with the correct TypeScript plugins.
 
@@ -328,14 +324,14 @@ Because *node.js* is big memory consumer you need 1-2GB RAM or virtual memory to
 Go to main project folder. To build big (~280MB) image which has cached data and is able to **FAST** rebuild  
 (this is good for testing or staging environment) type: 
 
-`docker build -t angular-starter .`
+`docker build -t frontend .`
 
 To build **SMALL** (~20MB) image without cache (so each rebuild will take the same amount of time as first build)
 (this is good for production environment) type:
 
-`docker build --squash="true" -t angular-starter .` 
+`docker build --squash="true" -t frontend .` 
 
-The **angular-starter** name used in above commands is only example image name. 
+The **frontend** name used in above commands is only example image name. 
 To remove intermediate images created by docker on build process, type:
  
 `docker rmi -f $(docker images -f "dangling=true" -q)`
@@ -344,7 +340,7 @@ To remove intermediate images created by docker on build process, type:
 
 To run created docker image on [localhost:8080](localhost:8080) type (parameter `-p 8080:80` is host:container port mapping)
 
-`docker run --name angular-starter -p 8080:80 angular-starter &`
+`docker run --name frontend -p 8080:80 frontend &`
 
 And that's all, you can open browser and go to [localhost:8080](localhost:8080).
 
@@ -358,7 +354,7 @@ If you wan't run image as virtual-host on sub-domain you must setup [proxy](http
  docker run -d -p 80:80 --name nginx-proxy -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy:alpine
  ```
  
- And in your `/etc/hosts` file (linux) add line: `127.0.0.1 angular-starter.your-domain.com` or in yor hosting add
+ And in your `/etc/hosts` file (linux) add line: `127.0.0.1 frontend.your-domain.com` or in yor hosting add
  folowwing DNS record (wildchar `*` is handy because when you add new sub-domain in future, you don't need touch/add any DNS record)
   
  ```
@@ -371,12 +367,12 @@ If you wan't run image as virtual-host on sub-domain you must setup [proxy](http
 And now you are ready to run image on subdomain by:
 
 ```
-docker run -e VIRTUAL_HOST=angular-starter.your-domain.com --name angular-starter angular-starter &
+docker run -e VIRTUAL_HOST=frontend.your-domain.com --name frontend frontend &
 ```
 
 ### Login into docker container
 
-`docker exec -t -i angular-starter /bin/bash`
+`docker exec -t -i frontend/bin/bash`
 
 # License
  [MIT](/LICENSE)
