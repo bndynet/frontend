@@ -1,0 +1,49 @@
+<header>
+  <core-navbar></core-navbar>
+</header>
+<div class="main-body">
+  <md-sidenav-container>
+    <md-sidenav #sidenav mode="side" opened="true">
+      <nav>
+        <h3>Example</h3>
+        <ul>
+          <li>
+            <a [routerLink]=" ['./home'] " md-button
+               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Home
+            </a>
+          </li>
+          <li>
+            <a [routerLink]=" ['./example-form'] " md-button
+               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Form
+            </a>
+          </li>
+          <li>
+            <a [routerLink]=" ['./example-grid'] " md-button
+               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Grid
+            </a>
+          </li>
+          <li>
+            <a [routerLink]=" ['./detail'] " md-button
+               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Nest
+            </a>
+          </li>
+          <li>
+            <a [routerLink]=" ['./example-article'] " md-button
+               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Article
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </md-sidenav>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <footer></footer>
+  </md-sidenav-container>
+</div>

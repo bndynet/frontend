@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule, MdIconRegistry } from '@angular/material';
+import { MaterialModule,
+  MdAutocompleteModule,
+  MdDatepickerModule, MdNativeDateModule,
+  MdIconRegistry
+} from '@angular/material';
 import 'hammerjs';
 import {
   NgModule,
@@ -28,13 +32,16 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
-import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
-import { AuthLoginComponent } from "./auth/login.component";
+import { CoreNavbarComponent } from './core/navbar.component';
+import { CorePageHeaderComponent } from './core/pageHeader.component';
+// import { CoreNavbarComponent, CorePageHeaderComonent } from './core/index';
+import { AuthLoginComponent } from './auth/login.component';
+import { ExampleArticleComponent } from './example/article.component';
+import { ExampleFormComponent } from './example/form.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -55,11 +62,13 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
+    CoreNavbarComponent,
+    CorePageHeaderComponent,
     HomeComponent,
     AuthLoginComponent,
     NoContentComponent,
-    XLargeDirective
+    ExampleArticleComponent,
+    ExampleFormComponent,
   ],
   /**
    * Import Angular's modules.
@@ -67,9 +76,13 @@ type StoreType = {
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+
+    MdAutocompleteModule,
+    MdDatepickerModule, MdNativeDateModule,
     MaterialModule
   ],
   /**

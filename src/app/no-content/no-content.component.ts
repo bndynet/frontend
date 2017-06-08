@@ -3,9 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'no-content',
   template: `
-    <div>
-      <h1>404: page missing</h1>
-    </div>
+    <md-card style="width: 260px; margin: 50px auto;">
+      <h1>
+        <i class="fa fa-warning"></i>
+        Coming Soon
+      </h1>
+    </md-card>
   `
 })
 export class NoContentComponent {

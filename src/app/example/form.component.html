@@ -1,0 +1,64 @@
+<core-page-header [title]="'Form'" [subtitle]="'input, datepicker, autocomplete'"></core-page-header>
+<form>
+  <md-input-container>
+    <input mdInput placeholder="Company (disabled)" disabled value="Bndy.Net">
+  </md-input-container>
+
+  <table  cellspacing="0">
+    <tr>
+      <td>
+        <md-input-container>
+          <input mdInput placeholder="First name">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container>
+          <input mdInput placeholder="Last name">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container>
+          <input mdInput [mdDatepicker]="picker" placeholder="Your birthday">
+          <button mdSuffix [mdDatepickerToggle]="picker"></button>
+        </md-input-container>
+        <md-datepicker #picker></md-datepicker>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <md-input-container>
+      <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+    </md-input-container>
+    <md-input-container>
+      <textarea mdInput placeholder="Address 2"></textarea>
+    </md-input-container>
+  </p>
+
+  <table cellspacing="0">
+    <tr>
+      <td>
+        <md-input-container>
+          <input mdInput placeholder="City">
+        </md-input-container>
+      </td>
+      <td>
+        <md-input-container>
+          <input mdInput placeholder="State" [mdAutocomplete]="auto" [formControl]="formCtrl" [(ngModel)]="state">
+        </md-input-container>
+
+        <md-autocomplete #auto="mdAutocomplete">
+          <md-option *ngFor="let state of filteredStates | async" [value]="state">
+            {{ state }}
+          </md-option>
+        </md-autocomplete>
+      </td>
+      <td>
+        <md-input-container>
+          <input mdInput #postalCode maxlength="6" placeholder="Postal Code" value="230088">
+          <md-hint align="end">{{postalCode.value.length}} / 6</md-hint>
+        </md-input-container>
+      </td>
+    </tr>
+  </table>
+</form>

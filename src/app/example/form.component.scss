@@ -1,0 +1,12 @@
+form {
+  width: 600px;
+  margin: 50px;
+
+  & > * {
+    width: 100%;
+
+    md-input-container {
+      width: 100%;
+    }
+  }
+}

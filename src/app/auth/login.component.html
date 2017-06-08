@@ -1,3 +1,4 @@
+<core-page-header [title]="'Login'" [subtitle]="'Login Form'"></core-page-header>
 <md-card>
   <md-card-header>
     <div md-card-avatar>
@@ -14,7 +15,7 @@
     </md-progress-spinner>
     <div *ngIf="!isLoading">
       <md-input-container>
-        <input mdInput placeholder="Account" [(ngModel)]="model.account">
+        <input mdInput placeholder="Username" [(ngModel)]="model.account">
       </md-input-container>
       <md-input-container>
         <input mdInput placeholder="Password" [(ngModel)]="model.password">
