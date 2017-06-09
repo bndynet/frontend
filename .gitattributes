@@ -1,1 +1,3 @@
-yarn.lock -diff
+**/config/*  linguist-vendored
+/*.js   linguist-vendored
+**/doc/*  linguist-documentation
