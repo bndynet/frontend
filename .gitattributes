@@ -1,3 +1,4 @@
 **/config/*  linguist-vendored
 /*.js   linguist-vendored
+*.json   linguist-vendored
 **/doc/*  linguist-documentation
