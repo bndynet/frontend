@@ -25,10 +25,8 @@ app {
         color: #ffffff;
         text-transform: uppercase;
 
-        &:first-child {
-          img {
-            height: 26px;
-          }
+        img {
+          height: 26px;
         }
       }
 

@@ -4,47 +4,24 @@
 <div class="main-body">
   <md-sidenav-container>
     <md-sidenav #sidenav mode="side" opened="true">
-      <nav>
-        <ul>
-          <li>
-            <a [routerLink]="['./dashboard']" md-button
+      <nav *ngFor="let menu of menus">
+        <h3 *ngIf="!!menu.children && menu.children.length > 0">{{menu.text}}</h3>
+        <ul *ngIf="!!menu.children && menu.children.length > 0">
+          <li *ngFor="let child of menu.children">
+            <a [routerLink]="child.url" md-button
                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              Dashboard</a>
+              <i class="{{child.icon}}" *ngIf="child.icon"></i>
+              <img src="assets/img/{{child.icon.replace('img:', '')}}" *ngIf="child.icon.indexOf('img:')===0">
+              {{child.text}}</a>
           </li>
         </ul>
-      </nav>
-      <nav>
-        <h3>Example</h3>
-        <ul>
+        <ul *ngIf="!menu.children">
           <li>
-            <a [routerLink]=" ['./home'] " md-button
+            <a [routerLink]="menu.url" md-button
                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              Home
-            </a>
-          </li>
-          <li>
-            <a [routerLink]=" ['./example-form'] " md-button
-               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              Form
-            </a>
-          </li>
-          <li>
-            <a [routerLink]=" ['./example-grid'] " md-button
-               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              Grid
-            </a>
-          </li>
-          <li>
-            <a [routerLink]=" ['./detail'] " md-button
-               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              Nest
-            </a>
-          </li>
-          <li>
-            <a [routerLink]=" ['./example-article'] " md-button
-               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              Article
-            </a>
+              <i class="{{menu.icon}}" *ngIf="menu.icon"></i>
+              <img src="assets/img/{{menu.icon.replace('img:', '')}}" *ngIf="menu.icon.indexOf('img:')===0">
+              {{menu.text}}</a>
           </li>
         </ul>
       </nav>

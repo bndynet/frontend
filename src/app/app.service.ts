@@ -1,8 +1,29 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
 
 export type InternalStateType = {
   [key: string]: any
 };
+
+@Injectable()
+export class AppService {
+
+  constructor(
+    private http: Http,
+  ){
+  }
+
+  getMainMenus(): Promise<any[]> {
+    return this.http.get('/assets/mock-data/data.json').toPromise().then(res => res.json().mainMenus);
+  }
+
+  getSideMenus(): Promise<any[]> {
+    return this.http.get('/assets/mock-data/data.json').toPromise().then(res => res.json().sideMenus);
+  }
+
+}
 
 @Injectable()
 export class AppState {

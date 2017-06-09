@@ -1,12 +1,10 @@
 <nav>
-  <a [routerLink]=" ['./'] " md-button
-     routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-    <img src="assets/img/angular-logo.png">
-    Home
-  </a>
-  <a [routerLink]=" ['./login'] " md-button
-     routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-    Login
+  <a *ngFor="let menu of menus"
+     [routerLink]="menu.url"
+     md-button>
+    <i class="{{menu.icon}}" *ngIf="menu.icon"></i>
+    <img src="assets/img/{{menu.icon.replace('img:', '')}}" *ngIf="menu.icon.indexOf('img:')===0">
+    {{menu.text}}
   </a>
   <a md-button [mdMenuTriggerFor]="menu">
     <i class="fa fa-user"></i>

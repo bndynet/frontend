@@ -30,7 +30,7 @@ import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InternalStateType } from './app.service';
+import { AppService, AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { NoContentComponent } from './no-content';
 
@@ -46,7 +46,7 @@ import { ExampleFormComponent } from './example/form.component';
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState, AppService,
 ];
 
 type StoreType = {
