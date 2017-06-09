@@ -5,6 +5,15 @@
   <md-sidenav-container>
     <md-sidenav #sidenav mode="side" opened="true">
       <nav>
+        <ul>
+          <li>
+            <a [routerLink]="['./dashboard']" md-button
+               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+      <nav>
         <h3>Example</h3>
         <ul>
           <li>

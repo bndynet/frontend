@@ -1,9 +1,7 @@
-/**
- * @author: @AngularClass
- */
-
 const webpack = require('webpack');
 const helpers = require('./helpers');
+const chalk = require('chalk');
+const moment = require('moment');
 
 /**
  * Webpack Plugins
@@ -23,6 +21,8 @@ const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
 //const PreloadWebpackPlugin = require('preload-webpack-plugin');
+var WebpackAutoInject = require('webpack-auto-inject-version');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 /**
  * Webpack Constants
@@ -30,7 +30,7 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Frontend',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR
@@ -129,6 +129,7 @@ module.exports = function (options) {
               options: {
                 loader: 'async-import',
                 genDir: 'compiled',
+                debug: false,
                 aot: AOT
               }
             },
@@ -136,7 +137,8 @@ module.exports = function (options) {
               loader: 'awesome-typescript-loader',
               options: {
                 configFileName: 'tsconfig.webpack.json',
-                useCache: !isProd
+                useCache: !isProd,
+                silent: true
               }
             },
             {
@@ -419,6 +421,22 @@ module.exports = function (options) {
        * https://github.com/szrenwei/inline-manifest-webpack-plugin
        */
       new InlineManifestWebpackPlugin(),
+      new WebpackAutoInject({
+        components: {
+          AutoIncreaseVersion: false,
+          InjectByTag: true,
+          InjectAsComment: true,
+        },
+        componentsOptions: {
+          InjectAsComment: {
+            tag: 'Build version: {version} - {date}'
+          }
+        }
+      }),
+      // new ProgressBarPlugin({
+      //   format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds) on ' + moment().format('MMMM Do YYYY, h:mm a') + ' ',
+      //   clear: false
+      // }),
     ],
 
     /**

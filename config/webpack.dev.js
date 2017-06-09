@@ -85,7 +85,7 @@ module.exports = function (options) {
        */
       chunkFilename: '[id].chunk.js',
 
-      library: 'ac_[name]',
+      library: 'bn_[name]',
       libraryTarget: 'var',
     },
 
