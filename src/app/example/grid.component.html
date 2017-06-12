@@ -1,0 +1,22 @@
+<core-page-header [title]="'Grid'"></core-page-header>
+<div class="page-body">
+  <md-grid-list cols="4" rowHeight="1:2">
+    <md-grid-tile *ngFor="let i of [1,2,3,4]">
+      <md-card>
+        <md-card-header>
+          <img md-card-avatar src="assets/img/logo.png">
+          <md-card-title>Shiba Inu</md-card-title>
+          <md-card-subtitle>Dog Breed</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="assets/img/logo.png">
+        <md-card-content>
+          The Shiba Inu is the smallest of the six original and distinct...
+        </md-card-content>
+        <md-card-actions>
+          <button md-button>LIKE</button>
+          <button md-button>SHARE</button>
+        </md-card-actions>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>

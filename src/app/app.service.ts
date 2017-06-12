@@ -23,6 +23,9 @@ export class AppService {
     return this.http.get('/assets/mock-data/data.json').toPromise().then(res => res.json().sideMenus);
   }
 
+  getArticles(): Promise<any[]> {
+    return this.http.get('/assets/mock-data/data.json').toPromise().then(res => res.json().articles);
+  }
 }
 
 @Injectable()

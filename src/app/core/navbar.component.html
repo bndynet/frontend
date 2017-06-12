@@ -6,22 +6,22 @@
     <img src="assets/img/{{menu.icon.replace('img:', '')}}" *ngIf="menu.icon.indexOf('img:')===0">
     {{menu.text}}
   </a>
-  <a md-button [mdMenuTriggerFor]="menu">
-    <i class="fa fa-user"></i>
+  <a md-button [mdMenuTriggerFor]="menu" class="right">
+    <img src="/assets/img/logo.png" class="img-circle white">
     Bendy
   </a>
   <md-menu #menu="mdMenu">
     <button md-menu-item>
-      <md-icon>dialpad</md-icon>
-      <span>Redial</span>
+      <i class="fa fa-cogs"></i>
+      <span>Settings</span>
     </button>
-    <button md-menu-item disabled>
-      <md-icon>voicemail</md-icon>
-      <span>Check voicemail</span>
-    </button>
-    <button md-menu-item>
-      <md-icon>notifications_off</md-icon>
-      <span>Disable alerts</span>
-    </button>
+    <a md-menu-item routerLink="./login">
+      <i class="fa fa-sign-in"></i>
+      <span>Switch User</span>
+    </a>
+    <a md-menu-item routerLink="./logout">
+      <i class="fa fa-sign-out"></i>
+      <span>Sign Out</span>
+    </a>
   </md-menu>
 </nav>

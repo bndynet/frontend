@@ -23,9 +23,16 @@ header,
   stroke: $primary-color;
 }
 
-.mat-option {
-  height: 42px;
-  line-height: 42px;
+.mat-option,
+.mat-menu-item {
+  height: 36px;
+  line-height: 36px;
+}
+
+snack-bar-container {
+  &.success {
+    background-color: $success-color;
+  }
 }
 
 .page-body {
@@ -36,3 +43,22 @@ header,
   }
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.img-circle {
+  border-radius: 50%;
+
+  &.primary {
+    background-color: $primary-color;
+  }
+
+  &.white {
+    background-color: #ffffff;
+  }
+}

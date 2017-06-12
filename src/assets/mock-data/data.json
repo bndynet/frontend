@@ -1,18 +1,19 @@
 {
   "mainMenus": [
-    { "icon": "img:angular-logo.png", "text": "Frontend", "url": "./" },
+    { "icon": "img:logo.png", "text": "Frontend", "url": "./" },
     { "icon": "fa fa-home", "text": "Home", "url": "./home" },
     { "icon": "", "text": "About", "url": "./about" },
-    { "icon": "", "text": "Contact", "url": "./contact" },
-    { "icon": "fa fa-sign-in", "text": "Login", "url": "./login" }
+    { "icon": "", "text": "Contact", "url": "./contact" }
   ],
   "sideMenus": [
     { "icon": "fa fa-dashboard", "text": "Dashboard", "url": "./dashboard" },
     { "icon": "", "text": "Example", "url": "", "children": [
-      { "icon": "fa fa-card", "text": "Form", "url": "./example-form" },
-      { "icon": "fa fa-grid", "text": "Grid", "url": "./example-grid" },
+      { "icon": "fa fa-id-card-o", "text": "Form", "url": "./example-form" },
+      { "icon": "fa fa-list", "text": "List", "url": "./example-list" },
+      { "icon": "fa fa-th-large", "text": "Grid", "url": "./example-grid" },
+      { "icon": "fa fa-table", "text": "Table", "url": "./example-table" },
       { "icon": "fa fa-tag", "text": "Article", "url": "./example-article" },
-      { "icon": "fa fa-sign-in", "text": "Nested", "url": "./detail" }
+      { "icon": "fa fa-tag", "text": "Nested", "url": "./detail" }
     ]}
   ],
   "articles": [

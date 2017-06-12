@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule,
   MdAutocompleteModule,
   MdDatepickerModule, MdNativeDateModule,
+  MdGridListModule,
+  MdDialogModule,
   MdIconRegistry
 } from '@angular/material';
 import 'hammerjs';
@@ -40,8 +42,11 @@ import { CoreNavbarComponent } from './core/navbar.component';
 import { CorePageHeaderComponent } from './core/pageHeader.component';
 // import { CoreNavbarComponent, CorePageHeaderComonent } from './core/index';
 import { AuthLoginComponent } from './auth/login.component';
+import { AuthLogoutComponent, AuthLogoutConfirmComponent } from './auth/logout.component';
 import { ExampleArticleComponent } from './example/article.component';
 import { ExampleFormComponent } from './example/form.component';
+import { ExampleGridComponent } from './example/grid.component';
+import { ExampleListComponent } from './example/list.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -66,9 +71,16 @@ type StoreType = {
     CorePageHeaderComponent,
     HomeComponent,
     AuthLoginComponent,
+    AuthLogoutComponent,
+    AuthLogoutConfirmComponent,
     NoContentComponent,
     ExampleArticleComponent,
     ExampleFormComponent,
+    ExampleGridComponent,
+    ExampleListComponent,
+  ],
+  entryComponents: [
+    AuthLogoutConfirmComponent,
   ],
   /**
    * Import Angular's modules.
@@ -82,7 +94,9 @@ type StoreType = {
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
 
     MdAutocompleteModule,
+    MdDialogModule,
     MdDatepickerModule, MdNativeDateModule,
+    MdGridListModule,
     MaterialModule
   ],
   /**

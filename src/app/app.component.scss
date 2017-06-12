@@ -42,6 +42,16 @@ app {
     }
   }
 
+  nav {
+    .mat-button, .mat-icon-button, .mat-raised-button {
+      .mat-button-wrapper {
+        i {
+          vertical-align: inherit;
+        }
+      }
+    }
+  }
+
   .main-body {
     display: flex;
     flex: 1 1 auto;
