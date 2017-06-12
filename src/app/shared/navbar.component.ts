@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 
 @Component({
-  selector: 'core-navbar',
+  selector: 'shared-navbar',
   styleUrls: [],
   templateUrl: './navbar.component.html',
   //providers: [AppService]
 })
 
-export class CoreNavbarComponent implements OnInit {
+export class SharedNavbarComponent implements OnInit {
   menus: any[];
 
   constructor(

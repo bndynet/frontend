@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'core-page-header',
+  selector: 'shared-page-header',
   styleUrls: ['pageHeader.component.scss'],
   templateUrl: 'pageHeader.component.html',
 })
 
-export class CorePageHeaderComponent implements OnInit {
+export class SharedPageHeaderComponent implements OnInit {
   @Input()
   title: string;
   @Input()

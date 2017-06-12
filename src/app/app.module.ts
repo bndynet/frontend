@@ -38,9 +38,8 @@ import { NoContentComponent } from './no-content';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
-import { CoreNavbarComponent } from './core/navbar.component';
-import { CorePageHeaderComponent } from './core/pageHeader.component';
-// import { CoreNavbarComponent, CorePageHeaderComonent } from './core/index';
+import { SharedNavbarComponent } from './shared/navbar.component';
+import { SharedPageHeaderComponent } from './shared/pageHeader.component';
 import { AuthLoginComponent } from './auth/login.component';
 import { AuthLogoutComponent, AuthLogoutConfirmComponent } from './auth/logout.component';
 import { ExampleArticleComponent } from './example/article.component';
@@ -67,8 +66,8 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    CoreNavbarComponent,
-    CorePageHeaderComponent,
+    SharedNavbarComponent,
+    SharedPageHeaderComponent,
     HomeComponent,
     AuthLoginComponent,
     AuthLogoutComponent,
