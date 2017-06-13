@@ -1,5 +1,6 @@
 {
   "logLevel": "error",
+  "angularCompilerOptions": { "genDir": "./src/locale" },
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",

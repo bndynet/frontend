@@ -14,10 +14,17 @@ export class ExampleFormComponent implements OnInit {
   states: string[] = [];
   filteredStates: any;
   formCtrl: FormControl;
+  seasons: string[];
 
   constructor(
   ) {
     this.formCtrl = new FormControl();
+    this.seasons = [
+      'Winter',
+      'Spring',
+      'Summer',
+      'Autumn',
+    ];
     this.states = [
       'Alabama',
       'Alaska',

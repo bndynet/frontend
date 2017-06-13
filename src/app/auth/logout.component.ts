@@ -39,9 +39,9 @@ export class AuthLogoutComponent implements OnInit {
       Are you sure you want to sign out?
     </md-dialog-content>
     <md-dialog-actions>
-      <button md-button md-dialog-close>No</button>
+      <button md-raised-button md-dialog-close>No</button>
       <!-- Can optionally provide a result for the closing dialog. -->
-      <button md-button [md-dialog-close]="true">Yes</button>
+      <button md-raised-button class="danger" [md-dialog-close]="true">Yes</button>
     </md-dialog-actions>`,
 })
 export class AuthLogoutConfirmComponent implements OnInit {

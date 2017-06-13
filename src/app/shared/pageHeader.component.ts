@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'shared-page-header',
@@ -8,9 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class SharedPageHeaderComponent implements OnInit {
   @Input()
-  title: string;
+  @Output()
+  public title: string;
   @Input()
-  subtitle: string;
+  @Output()
+  public subtitle: string;
 
   constructor(
 

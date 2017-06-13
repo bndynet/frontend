@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'no-content',
+  selector: 'app-coming-soon',
   template: `
     <md-card style="width: 360px; margin: 100px auto;">
       <h1>
@@ -11,6 +11,4 @@ import { Component } from '@angular/core';
     </md-card>
   `
 })
-export class NoContentComponent {
-
-}
+export class AppComingSoonComponent { }

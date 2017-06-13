@@ -62,6 +62,14 @@
     </tr>
   </table>
 
+  <p>
+    <md-radio-group [(ngModel)]="radioValue" name="radio" >
+      <md-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </md-radio-button>
+    </md-radio-group>
+  </p>
+
   <br>
   <div>
     <button md-raised-button class="mat-primary">Submit</button>

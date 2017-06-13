@@ -37,6 +37,7 @@
     "github-deploy:dev": "npm run webpack -- --config config/webpack.github-deploy.js --progress --profile --env.githubDev",
     "github-deploy:prod": "npm run webpack -- --config config/webpack.github-deploy.js --progress --profile --env.githubProd",
     "github-deploy": "npm run github-deploy:dev",
+    "i18n": "ng-xi18n -p tsconfig.json --i18nFormat xlf",
     "lint": "npm run tslint \"src/**/*.ts\"",
     "node": "node",
     "postinstall": "npm run webdriver:update",

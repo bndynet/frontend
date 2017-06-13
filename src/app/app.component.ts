@@ -1,5 +1,3 @@
-require('./core/navbar.component');
-
 /**
  * Angular 2 decorators and services
  */
