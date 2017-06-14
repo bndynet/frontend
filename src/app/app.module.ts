@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdSidenavModule, MdIconRegistry } from '@angular/material';
+import { MdButtonModule, MdProgressBarModule, MdSidenavModule, MdIconRegistry } from '@angular/material';
 import 'hammerjs';
 import {
   NgModule,
@@ -62,6 +62,7 @@ type StoreType = {
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
 
     MdButtonModule,
+    MdProgressBarModule,
     MdSidenavModule,
 
     CoreModule,

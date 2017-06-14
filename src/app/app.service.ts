@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Output, Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
@@ -10,9 +10,16 @@ export type InternalStateType = {
 @Injectable()
 export class AppService {
 
+  @Output() loadEvent: EventEmitter<boolean> = new EventEmitter(true);
+
   constructor(
     private http: Http,
   ){
+
+  }
+
+  setLoading(value: boolean): void {
+      this.loadEvent.emit(value);
   }
 
   getMainMenus(): Promise<any[]> {

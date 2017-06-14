@@ -1,3 +1,4 @@
+<md-progress-bar mode="indeterminate" *ngIf="isLoading"></md-progress-bar>
 <header>
   <app-navbar></app-navbar>
 </header>
@@ -5,8 +6,12 @@
   <md-sidenav-container>
     <md-sidenav #sidenav mode="side" opened="true">
       <nav *ngFor="let menu of menus">
-        <h3 *ngIf="!!menu.children && menu.children.length > 0">{{menu.text}}</h3>
-        <ul *ngIf="!!menu.children && menu.children.length > 0">
+        <h3 *ngIf="!!menu.children && menu.children.length > 0" (click)="toggleMenu(menu)">
+          {{menu.text}}
+          <i class="fa fa-angle-down right" *ngIf="!menu.isCollapsed"></i>
+          <i class="fa fa-angle-left right" *ngIf="menu.isCollapsed"></i>
+        </h3>
+        <ul *ngIf="!!menu.children && menu.children.length > 0 && !menu.isCollapsed">
           <li *ngFor="let child of menu.children">
             <a [routerLink]="child.url" md-button
                routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -15,6 +20,7 @@
               {{child.text}}</a>
           </li>
         </ul>
+
         <ul *ngIf="!menu.children">
           <li>
             <a [routerLink]="menu.url" md-button

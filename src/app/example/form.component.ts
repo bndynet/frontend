@@ -4,6 +4,8 @@ import { FormControl } from '@angular/forms';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 
+import { AppService } from '../app.service';
+
 @Component({
   selector: 'example-form',
   styleUrls: ['form.component.scss'],
@@ -15,8 +17,10 @@ export class ExampleFormComponent implements OnInit {
   filteredStates: any;
   formCtrl: FormControl;
   seasons: string[];
+  isLoading: boolean = false;
 
   constructor(
+    private appService: AppService,
   ) {
     this.formCtrl = new FormControl();
     this.seasons = [
@@ -89,5 +93,10 @@ export class ExampleFormComponent implements OnInit {
   filterStates(val: string) {
     return val ? this.states.filter(s => new RegExp(`^${val}`, 'gi').test(s))
       : this.states;
+  }
+
+  submitForm(): void {
+    this.isLoading = !this.isLoading;
+    this.appService.setLoading(this.isLoading);
   }
 }

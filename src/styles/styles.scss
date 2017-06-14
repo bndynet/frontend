@@ -24,6 +24,14 @@ header,
   stroke: $primary-color;
 }
 
+.mat-progress-bar-fill::after {
+  background-color: $warning-color;
+}
+
+.mat-progress-bar-buffer {
+  background-color: lighten($primary-color, 50%);
+}
+
 .mat-option,
 .mat-menu-item {
   height: 36px;

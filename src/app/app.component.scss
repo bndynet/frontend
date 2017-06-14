@@ -52,6 +52,14 @@ app {
     }
   }
 
+  .mat-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    height: 3px;
+  }
+
   .main-body {
     display: flex;
     flex: 1 1 auto;
@@ -74,6 +82,11 @@ app {
             font-weight: 400;
             margin: 0;
             padding: 0 16px;
+            cursor: pointer;
+
+            .right {
+              line-height: 20px;
+            }
           }
           ul {
             list-style-type: none;
