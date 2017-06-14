@@ -373,6 +373,3 @@ docker run -e VIRTUAL_HOST=frontend.your-domain.com --name frontend frontend &
 ### Login into docker container
 
 `docker exec -t -i frontend/bin/bash`
-
-# License
- [MIT](/LICENSE)
