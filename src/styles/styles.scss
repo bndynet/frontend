@@ -25,11 +25,11 @@ header,
 }
 
 .mat-progress-bar-fill::after {
-  background-color: $warning-color;
+  background-color: lighten($primary-color, 50%);
 }
 
 .mat-progress-bar-buffer {
-  background-color: lighten($primary-color, 50%);
+  background-color: $primary-color;
 }
 
 .mat-option,
