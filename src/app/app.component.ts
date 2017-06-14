@@ -6,6 +6,9 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
+import {
+ Router, NavigationStart, NavigationEnd,
+} from '@angular/router';
 import { AppService, AppState } from './app.service';
 
 /**
@@ -28,9 +31,19 @@ export class AppComponent implements OnInit {
   isLoading: boolean = true;
 
   constructor(
+    private router: Router,
     public appState: AppState,
     private appService: AppService,
-  ) {}
+  ) {
+    this.router.events.forEach((event)=>{
+      if(event instanceof NavigationStart) {
+        appService.setLoading(true);
+      }
+      else if (event instanceof NavigationEnd) {
+        appService.setLoading(false);
+      }
+    });
+  }
 
   ngOnInit() {
     this.appService.loadEvent.subscribe((value) => {
