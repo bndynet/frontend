@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
 import { AppNavbarComponent } from './navbar.component';
+import { AppSidebarComponent } from './sidebar.component';
 import { AppComingSoonComponent } from './comingsoon.component';
 
 const coreRoutes: Routes = [
@@ -18,8 +19,8 @@ const coreRoutes: Routes = [
 
     SharedModule,
   ],
-  declarations: [ AppNavbarComponent, AppComingSoonComponent ],
-  exports:      [ AppNavbarComponent ],
+  declarations: [ AppNavbarComponent, AppSidebarComponent, AppComingSoonComponent ],
+  exports:      [ AppNavbarComponent, AppSidebarComponent ],
   providers:    [ ]
 })
 export class CoreModule {}

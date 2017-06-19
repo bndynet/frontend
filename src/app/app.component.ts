@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     public appState: AppState,
     private appService: AppService,
   ) {
-    this.router.events.forEach((event)=>{
+    this.router.events.forEach((event) => {
       if(event instanceof NavigationStart) {
         appService.setLoading(true);
       }
@@ -50,16 +50,8 @@ export class AppComponent implements OnInit {
       this.isLoading = value;
     });
 
-    this.appService.getSideMenus().then(menus => {
-      this.menus = menus;
-    });
-
     setTimeout(() => {
       this.isLoading = false;
     }, 5000);
-  }
-
-  toggleMenu(menu: any): void {
-    menu.isCollapsed = !menu.isCollapsed;
   }
 }

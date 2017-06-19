@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+
+.sidebar-nav {
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .metismenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    & > li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      position: relative;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      padding: 13px 15px;
+      outline-width: 0;
+      transition: all .3s ease-out;
+      text-decoration: none;
+      color: $sidebar-text-color;
+
+      &[aria-expanded=true] {
+        &.has-arrow {
+          &:after {
+            top: 46%;
+          }
+        }
+      }
+
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        color: $sidebar-color-active;
+        background-color: darken($sidebar-color, 5%);
+        border-left: solid 3px $primary-color;
+      }
+    }
+  }
+}
+

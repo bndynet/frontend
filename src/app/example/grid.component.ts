@@ -12,7 +12,6 @@ export class ExampleGridComponent implements OnInit {
   constructor(
     private appService: AppService,
   ) {
-    console.debug('aa');
   }
 
   ngOnInit() {

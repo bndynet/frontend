@@ -1,0 +1,23 @@
+<nav class="sidebar-nav">
+  <ul class="metismenu">
+    <li *ngFor="let menu of menus">
+      <a [routerLink]="menu.url"
+         [ngClass]="{'has-arrow': !!menu.children && menu.children.length > 0}">
+        <i class="{{menu.icon}}" *ngIf="menu.icon"></i>
+        <img src="assets/img/{{menu.icon.replace('img:', '')}}" *ngIf="menu.icon.indexOf('img:')===0">
+        {{menu.text}}
+      </a>
+      <ul *ngIf="!!menu.children && menu.children.length > 0 && !menu.isCollapsed">
+        <li *ngFor="let child of menu.children">
+          <a [routerLink]="child.url"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}"
+             [ngClass]="{'has-arrow': !!child.children && child.children.length > 0}">
+            <i class="{{child.icon}}" *ngIf="child.icon"></i>
+            <img src="assets/img/{{child.icon.replace('img:', '')}}" *ngIf="child.icon.indexOf('img:')===0">
+            {{child.text}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

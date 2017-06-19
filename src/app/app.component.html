@@ -5,34 +5,8 @@
 <div class="main-body">
   <md-sidenav-container>
     <md-sidenav #sidenav mode="side" opened="true">
-      <nav *ngFor="let menu of menus">
-        <h3 *ngIf="!!menu.children && menu.children.length > 0" (click)="toggleMenu(menu)">
-          {{menu.text}}
-          <i class="fa fa-angle-down right" *ngIf="!menu.isCollapsed"></i>
-          <i class="fa fa-angle-left right" *ngIf="menu.isCollapsed"></i>
-        </h3>
-        <ul *ngIf="!!menu.children && menu.children.length > 0 && !menu.isCollapsed">
-          <li *ngFor="let child of menu.children">
-            <a [routerLink]="child.url" md-button
-               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              <i class="{{child.icon}}" *ngIf="child.icon"></i>
-              <img src="assets/img/{{child.icon.replace('img:', '')}}" *ngIf="child.icon.indexOf('img:')===0">
-              {{child.text}}</a>
-          </li>
-        </ul>
-
-        <ul *ngIf="!menu.children">
-          <li>
-            <a [routerLink]="menu.url" md-button
-               routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              <i class="{{menu.icon}}" *ngIf="menu.icon"></i>
-              <img src="assets/img/{{menu.icon.replace('img:', '')}}" *ngIf="menu.icon.indexOf('img:')===0">
-              {{menu.text}}</a>
-          </li>
-        </ul>
-      </nav>
+      <app-sidebar></app-sidebar>
     </md-sidenav>
-
     <main>
       <router-outlet></router-outlet>
     </main>
