@@ -15,6 +15,7 @@ import {
   MdSnackBarModule,
   MdRadioModule,
   MdCheckboxModule,
+  MdTooltipModule,
 } from '@angular/material';
 
 import { SharedPageHeaderComponent } from './pageHeader.component';
@@ -43,6 +44,7 @@ import { SharedPageHeaderComponent } from './pageHeader.component';
     MdSnackBarModule,
     MdRadioModule,
     MdCheckboxModule,
+    MdTooltipModule,
 
     SharedPageHeaderComponent,
   ],

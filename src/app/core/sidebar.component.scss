@@ -37,6 +37,10 @@
       text-decoration: none;
       color: $sidebar-text-color;
 
+      i {
+        margin-right: 5px;
+      }
+
       &[aria-expanded=true] {
         &.has-arrow {
           &:after {
