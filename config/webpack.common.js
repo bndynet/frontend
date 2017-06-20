@@ -438,7 +438,7 @@ module.exports = function (options) {
         jQuery: 'jquery',
         $: 'jquery',
         jquery: 'jquery',
-        //'window.jQuery': 'jquery',
+        _: 'lodash',
       }),
       // new ProgressBarPlugin({
       //   format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds) on ' + moment().format('MMMM Do YYYY, h:mm a') + ' ',

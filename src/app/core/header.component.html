@@ -1,0 +1,104 @@
+<nav class="navbar topnavbar" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#/">
+      <div class="brand-logo">
+        <img alt="App Logo" class="img-responsive" src="assets/img/logo.png">
+      </div>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <ul class="nav navbar-nav">
+      <li>
+        <a>
+          <i class="fa fa-navicon"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a>
+          <i class="fa fa-search"></i>
+        </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-bell"></i>
+          <span class="label label-danger">30</span>
+        </a>
+        <ul class="dropdown-menu animated flipInX">
+          <li>
+            <div class="list-group">
+              <a class="list-group-item">
+                <div class="media">
+                  <div class="media-left">
+                    <i class="fa fa-twitter fa-2x text-info"></i>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">New Followers</div>
+                    <span class="text-muted">
+                      <small>You have 10 new followers</small>
+                    </span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="list-group-item">
+                <div class="media">
+                  <div class="media-left">
+                    <i class="fa fa-envelope fa-2x text-warning"></i>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">My Messages</div>
+                    <span class="text-muted">
+                      <small>You have 10 new emails</small>
+                    </span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="list-group-item">
+                <div class="media">
+                  <div class="media-left">
+                    <i class="fa fa-tasks fa-2x text-success"></i>
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">My Tasks</div>
+                    <span class="text-muted">
+                      <small>You have 10 tasks.</small>
+                    </span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="list-group-item">
+                <small>Show more</small>
+                <span class="label label-danger pull-right">30</span>
+              </a>
+            </div>
+
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown user-block">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+           aria-expanded="false">
+          <img src="assets/img/logo.png" class="img-circle" />
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a routerLink="./login">
+              <i class="fa fa-sign-in"></i>
+              <span>Switch User</span>
+            </a>
+          </li>
+          <li role="separator" class="divider"></li>
+          <li><a routerLink="./logout">
+            <i class="fa fa-sign-out"></i>
+            <span>Sign Out</span>
+          </a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

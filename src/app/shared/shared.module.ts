@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
   MdButtonModule,
+  MdSelectModule,
   MdIconModule,
   MdMenuModule,
   MdInputModule,
@@ -31,6 +32,7 @@ import { SharedPageHeaderComponent } from './pageHeader.component';
     RouterModule,
 
     MdButtonModule,
+    MdSelectModule,
     MdIconModule,
     MdMenuModule,
     MdCardModule,

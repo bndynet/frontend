@@ -1,7 +1,7 @@
 /* this file will be extracted to main dist folder and is imported in index.html */
 /* This file is for setting global styles  */
 @import 'variables';
-/* @import "~bootstrap/dist/css/bootstrap.css"; */
+@import "~bootstrap/dist/css/bootstrap.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 $fa-font-path: "~font-awesome/fonts";
@@ -14,12 +14,23 @@ html, body{
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
-  font-size: 13px;
   color: $text-color;
+  font-size: 13px;
 }
 
-header,
-.mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+a {
+  cursor: pointer;
+}
+
+label {
+  font-weight: normal;
+}
+
+/* Material */
+.mat-radio-checked .mat-radio-outer-circle,
+.mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-progress-bar-buffer {
   background-color: $primary-color;
 }
 
@@ -29,10 +40,6 @@ header,
 
 .mat-progress-bar-fill::after {
   background-color: lighten($primary-color, 50%);
-}
-
-.mat-progress-bar-buffer {
-  background-color: $primary-color;
 }
 
 .mat-option,

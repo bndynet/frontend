@@ -6,6 +6,8 @@ import 'rxjs/add/operator/map';
 
 import { AppService } from '../app.service';
 
+import * as _ from 'lodash';
+
 @Component({
   selector: 'example-form',
   styleUrls: ['form.component.scss'],
@@ -18,6 +20,7 @@ export class ExampleFormComponent implements OnInit {
   formCtrl: FormControl;
   seasons: string[];
   isLoading: boolean = false;
+  chksValue: any = {};
 
   constructor(
     private appService: AppService,
@@ -29,6 +32,9 @@ export class ExampleFormComponent implements OnInit {
       'Summer',
       'Autumn',
     ];
+    _.each(this.seasons, (item) => {
+      this.chksValue[item] = false;
+    });
     this.states = [
       'Alabama',
       'Alaska',

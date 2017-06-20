@@ -14,36 +14,6 @@ app {
   -ms-flex-direction: column;
   flex-direction: column;
 
-
-  header {
-    position: relative;
-    z-index: 10;
-    height: 36px;
-    padding: 8px 16px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
-
-    nav {
-      a {
-        color: #ffffff;
-        text-transform: uppercase;
-
-        img {
-          height: 26px;
-        }
-      }
-
-      .mat-button, .mat-icon-button, .mat-raised-button {
-        color: #ffffff;
-
-        .mat-button-wrapper {
-          i {
-            vertical-align: inherit;
-          }
-        }
-      }
-    }
-  }
-
   nav {
     .mat-button, .mat-icon-button, .mat-raised-button {
       .mat-button-wrapper {
@@ -70,9 +40,9 @@ app {
       width: 100%;
 
       md-sidenav {
-        width: 160px;
+        width: $sidebar-width;
         background-color: $sidebar-color;
-        box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
+        border-right: solid 1px #cfdbe2;
       }
 
       .mat-sidenav-content {

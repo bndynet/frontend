@@ -4,8 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
 
-import { AppNavbarComponent } from './navbar.component';
+import { AppHeaderComponent } from './header.component';
 import { AppSidebarComponent } from './sidebar.component';
+import { AppNavsearchComponent } from './navsearch.component';
 import { AppComingSoonComponent } from './comingsoon.component';
 
 const coreRoutes: Routes = [
@@ -19,8 +20,8 @@ const coreRoutes: Routes = [
 
     SharedModule,
   ],
-  declarations: [ AppNavbarComponent, AppSidebarComponent, AppComingSoonComponent ],
-  exports:      [ AppNavbarComponent, AppSidebarComponent ],
+  declarations: [ AppHeaderComponent, AppSidebarComponent, AppNavsearchComponent, AppComingSoonComponent ],
+  exports:      [ AppHeaderComponent, AppSidebarComponent, AppNavsearchComponent ],
   providers:    [ ]
 })
 export class CoreModule {}

@@ -4,7 +4,7 @@
     <input mdInput placeholder="Company (disabled)" disabled value="Bndy.Net">
   </md-input-container>
 
-  <table  cellspacing="0">
+  <table cellspacing="0">
     <tr>
       <td>
         <md-input-container>
@@ -38,9 +38,11 @@
   <table cellspacing="0">
     <tr>
       <td>
-        <md-input-container>
-          <input mdInput placeholder="City">
-        </md-input-container>
+        <md-select placeholder="Select" [(ngModel)]="selectedValue" name="food">
+          <md-option *ngFor="let season of seasons" [value]="season">
+            {{season}}
+          </md-option>
+        </md-select>
       </td>
       <td>
         <md-input-container>
@@ -62,8 +64,20 @@
     </tr>
   </table>
 
+  <table>
+    <tr>
+      <td>
+        <md-checkbox [(ngModel)]="chksValue[season]"  name=”option_{{season}}” *ngFor="let season of seasons">{{season}}</md-checkbox>
+        <br />
+        <md-hint align="end">
+          {{chksValue | json}}
+        </md-hint>
+      </td>
+    </tr>
+  </table>
+
   <p>
-    <md-radio-group [(ngModel)]="radioValue" name="radio" >
+    <md-radio-group [(ngModel)]="radioValue" name="radio">
       <md-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
         {{season}}
       </md-radio-button>

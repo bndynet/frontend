@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 
-@Component({
-  selector: 'app-navbar',
-  styleUrls: [],
-  templateUrl: './navbar.component.html',
-  //providers: [AppService]
-})
+import 'bootstrap/dist/js/bootstrap.js';
 
-export class AppNavbarComponent implements OnInit {
+@Component({
+  selector: 'app-header',
+  styleUrls: ['./header.component.scss'],
+  templateUrl: './header.component.html',
+})
+export class AppHeaderComponent implements OnInit {
   menus: any[];
 
   constructor(
