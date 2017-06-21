@@ -1,92 +1,97 @@
 <shared-page-header [title]="'Form'" [subtitle]="'input, datepicker, autocomplete'"></shared-page-header>
 <form>
-  <md-input-container>
-    <input mdInput placeholder="Company (disabled)" disabled value="Bndy.Net">
-  </md-input-container>
+  <div class="row">
+    <div class="col-xs-12">
+      <md-input-container>
+        <input mdInput placeholder="Company (disabled)" disabled value="Bndy.Net">
+      </md-input-container>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <md-input-container>
+        <input mdInput placeholder="First name">
+      </md-input-container>
+    </div>
+    <div class="col-xs-4">
+      <md-input-container>
+        <input mdInput placeholder="Last name">
+      </md-input-container>
+    </div>
+    <div class="col-xs-4">
+      <md-input-container>
+        <input mdInput [mdDatepicker]="picker" placeholder="Your birthday">
+        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+      </md-input-container>
+      <md-datepicker #picker></md-datepicker>
+    </div>
+  </div>
 
-  <table cellspacing="0">
-    <tr>
-      <td>
-        <md-input-container>
-          <input mdInput placeholder="First name">
-        </md-input-container>
-      </td>
-      <td>
-        <md-input-container>
-          <input mdInput placeholder="Last name">
-        </md-input-container>
-      </td>
-      <td>
-        <md-input-container>
-          <input mdInput [mdDatepicker]="picker" placeholder="Your birthday">
-          <button mdSuffix [mdDatepickerToggle]="picker"></button>
-        </md-input-container>
-        <md-datepicker #picker></md-datepicker>
-      </td>
-    </tr>
-  </table>
+  <div class="row">
+    <div class="col-xs-12">
+      <md-input-container>
+        <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+      </md-input-container>
+    </div>
+  </div>
 
-  <p>
-    <md-input-container>
-      <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-    </md-input-container>
-    <md-input-container>
-      <textarea mdInput placeholder="Address 2"></textarea>
-    </md-input-container>
-  </p>
+  <div class="row">
+    <div class="col-xs-4">
+      <md-select placeholder="Select" [(ngModel)]="selectedValue" name="food">
+        <md-option *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </md-option>
+      </md-select>
+    </div>
+    <div class="col-xs-4">
+      <md-input-container>
+        <input mdInput placeholder="State" [mdAutocomplete]="auto" [formControl]="formCtrl" [(ngModel)]="state">
+      </md-input-container>
 
-  <table cellspacing="0">
-    <tr>
-      <td>
-        <md-select placeholder="Select" [(ngModel)]="selectedValue" name="food">
-          <md-option *ngFor="let season of seasons" [value]="season">
-            {{season}}
-          </md-option>
-        </md-select>
-      </td>
-      <td>
-        <md-input-container>
-          <input mdInput placeholder="State" [mdAutocomplete]="auto" [formControl]="formCtrl" [(ngModel)]="state">
-        </md-input-container>
+      <md-autocomplete #auto="mdAutocomplete">
+        <md-option *ngFor="let state of filteredStates | async" [value]="state">
+          {{ state }}
+        </md-option>
+      </md-autocomplete>
+    </div>
+    <div class="col-xs-4">
+      <md-input-container>
+        <input mdInput #postalCode maxlength="6" placeholder="Postal Code" value="230088">
+        <md-hint align="end">{{postalCode.value.length}} / 6</md-hint>
+      </md-input-container>
+    </div>
+  </div>
 
-        <md-autocomplete #auto="mdAutocomplete">
-          <md-option *ngFor="let state of filteredStates | async" [value]="state">
-            {{ state }}
-          </md-option>
-        </md-autocomplete>
-      </td>
-      <td>
-        <md-input-container>
-          <input mdInput #postalCode maxlength="6" placeholder="Postal Code" value="230088">
-          <md-hint align="end">{{postalCode.value.length}} / 6</md-hint>
-        </md-input-container>
-      </td>
-    </tr>
-  </table>
+  <div class="row">
+    <div class="col-xs-12">
+      <md-checkbox [(ngModel)]="chksValue[season]"  name=”option_{{season}}” *ngFor="let season of seasons">{{season}}</md-checkbox>
+    </div>
+  </div>
 
-  <table>
-    <tr>
-      <td>
-        <md-checkbox [(ngModel)]="chksValue[season]"  name=”option_{{season}}” *ngFor="let season of seasons">{{season}}</md-checkbox>
-        <br />
-        <md-hint align="end">
-          {{chksValue | json}}
-        </md-hint>
-      </td>
-    </tr>
-  </table>
+  <div class="row">
+    <div class="col-xs-12">
+      <md-radio-group [(ngModel)]="radioValue" name="radio">
+        <md-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}}
+        </md-radio-button>
+      </md-radio-group>
+    </div>
+  </div>
 
-  <p>
-    <md-radio-group [(ngModel)]="radioValue" name="radio">
-      <md-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
-        {{season}}
-      </md-radio-button>
-    </md-radio-group>
-  </p>
+  <div class="row">
+    <div class="col-xs-12">
+      <md-slide-toggle
+        color="primary"
+        [checked]="checked">
+        Slide me!
+      </md-slide-toggle>
+    </div>
+  </div>
 
-  <br>
-  <div>
-    <button md-raised-button class="mat-primary" (click)="submitForm()">Submit</button>
-    <button md-raised-button>Reset</button>
+  <div class="row">
+    <div class="col-xs-12">
+      <button md-raised-button class="mat-primary" (click)="submitForm()">Submit</button>
+      <button md-raised-button>Reset</button>
+    </div>
   </div>
 </form>

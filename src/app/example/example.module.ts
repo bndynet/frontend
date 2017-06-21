@@ -15,12 +15,14 @@ import { ExampleFormComponent } from './form.component';
 import { ExampleGridComponent } from './grid.component';
 import { ExampleListComponent } from './list.component';
 import { ExampleArticleComponent } from './article.component';
+import { ExampleTableComponent, ExampleTableCustomRenderColumnComponent } from './table.component';
 
 const exampleRoutes: Routes = [
   { path: 'example-grid', component: ExampleGridComponent },
   { path: 'example-form', component: ExampleFormComponent },
   { path: 'example-article', component: ExampleArticleComponent },
   { path: 'example-list', component: ExampleListComponent },
+  { path: 'example-table', component: ExampleTableComponent },
 ];
 
 @NgModule({
@@ -41,6 +43,11 @@ const exampleRoutes: Routes = [
     ExampleListComponent,
     ExampleGridComponent,
     ExampleFormComponent,
+    ExampleTableComponent,
+    ExampleTableCustomRenderColumnComponent,
+  ],
+  entryComponents: [
+    ExampleTableCustomRenderColumnComponent,
   ],
 })
 export class ExampleModule {

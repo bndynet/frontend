@@ -2,9 +2,14 @@ form {
   width: 600px;
   margin: 50px;
 
+  & > .row {
+    margin-bottom: 15px;
+  }
+
   & > * {
     width: 100%;
 
+    md-select,
     md-input-container {
       width: 100%;
     }

@@ -8,14 +8,14 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
 
 @import "~metismenu/dist/metisMenu.css";
+@import "~animate.css/animate.css";
 
-
-html, body{
+html, body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
   color: $text-color;
-  font-size: 13px;
+  font-size: $font-size;
 }
 
 a {
@@ -27,11 +27,55 @@ label {
 }
 
 /* Material */
-.mat-radio-checked .mat-radio-outer-circle,
+.mat-select {
+  .mat-select-trigger {
+    font-size: $font-size;
+    height: 33px;
+
+    .mat-select-value {
+
+      .mat-select-value-text {
+        margin-top: 8px;
+      }
+    }
+
+    .mat-select-arrow {
+      position: absolute;
+      right: 0;
+      bottom: 8px;
+    }
+
+    .mat-select-placeholder {
+      margin-top: 8px;
+    }
+
+    .mat-select-placeholder.mat-floating-placeholder {
+      position: absolute;
+      margin-top: 20px;
+    }
+  }
+
+  &:focus {
+    .mat-select-underline {
+      height: 2px;
+    }
+  }
+}
+
+.mat-option {
+  font-size: $font-size;
+}
+
+.mat-radio-inner-circle,
 .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary,
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb,
 .mat-progress-bar-buffer {
   background-color: $primary-color;
+}
+
+.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $primary-color;
 }
 
 .mat-progress-spinner path {
@@ -42,14 +86,18 @@ label {
   background-color: lighten($primary-color, 50%);
 }
 
+.mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: rgba($primary-color, .5);
+}
+
 .mat-option,
 .mat-menu-item {
   height: 36px;
   line-height: 36px;
 }
 
-md-radio-group {
-  md-radio-button {
+.mat-radio-group {
+  .mat-radio-button {
     margin-right: 10px;
 
     .mat-radio-label {
@@ -123,5 +171,42 @@ snack-bar-container {
 
   &.white {
     background-color: #ffffff;
+  }
+}
+
+/* ng2-smart-table */
+ng2-smart-table {
+  table {
+    th {
+      background-color: #efefef;
+    }
+  }
+
+  ng2-smart-table-pager {
+    text-align: center;
+  }
+
+  .ng2-smart-actions {
+    i {
+      margin: 0 3px;
+    }
+
+    a {
+      &.ng2-smart-action-edit-edit {
+        color: $primary-color;
+      }
+
+      &.ng2-smart-action-delete-delete {
+        color: $danger-color;
+      }
+
+      &.ng2-smart-action-edit-save {
+        color: $primary-color;
+      }
+
+      &.ng2-smart-action-edit-cancel {
+        color: $primary-color;
+      }
+    }
   }
 }

@@ -84,6 +84,7 @@
     "@angular/router": "~4.1.2",
     "@angularclass/hmr": "~1.2.2",
     "@angularclass/hmr-loader": "~3.0.2",
+    "animate.css": "^3.5.2",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
@@ -95,6 +96,7 @@
     "material": "^0.1.1",
     "metismenu": "^2.7.0",
     "moment": "^2.18.1",
+    "ng2-smart-table": "^1.2.1",
     "reflect-metadata": "^0.1.10",
     "rxjs": "~5.0.2",
     "zone.js": "0.8.5"

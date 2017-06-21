@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 import {
   MdButtonModule,
   MdSelectModule,
@@ -16,6 +17,7 @@ import {
   MdRadioModule,
   MdCheckboxModule,
   MdTooltipModule,
+  MdSlideToggleModule,
 } from '@angular/material';
 
 import { SharedPageHeaderComponent } from './pageHeader.component';
@@ -31,6 +33,7 @@ import { SharedPageHeaderComponent } from './pageHeader.component';
   exports: [
     CommonModule,
     RouterModule,
+    Ng2SmartTableModule,
 
     MdButtonModule,
     MdSelectModule,
@@ -45,6 +48,7 @@ import { SharedPageHeaderComponent } from './pageHeader.component';
     MdRadioModule,
     MdCheckboxModule,
     MdTooltipModule,
+    MdSlideToggleModule,
 
     SharedPageHeaderComponent,
   ],
