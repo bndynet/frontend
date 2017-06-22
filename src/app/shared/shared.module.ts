@@ -20,6 +20,10 @@ import {
   MdSlideToggleModule,
 } from '@angular/material';
 
+// services
+import { DefinitionService } from './definition.service';
+
+// shared components
 import { SharedPageHeaderComponent } from './pageHeader.component';
 
 @NgModule({
@@ -52,7 +56,9 @@ import { SharedPageHeaderComponent } from './pageHeader.component';
 
     SharedPageHeaderComponent,
   ],
-  providers: [],
+  providers: [
+    DefinitionService
+  ],
 })
 export class SharedModule {
 

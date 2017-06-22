@@ -4,6 +4,14 @@ $success-color: #3c763d;
 $warning-color: #ff9800;
 $danger-color: #e00000;
 
+$gray-base: #000;
+$gray-darker: lighten($gray-base, 13.5%);
+$gray-dark: lighten($gray-base, 20%);
+$gray: lighten($gray-base, 33.5%);
+$gray-light: lighten($gray-base, 46.7%);
+$gray-lighter: lighten($gray-base, 93.5%);
+$gray-white: lighten($gray-base, 96%);
+
 $text-color: #333333;
 
 $sidebar-color: #ffffff;

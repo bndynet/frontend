@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AppService } from '../app.service';
 import { ViewCell } from "ng2-smart-table";
+
+import { AppService } from '../app.service';
+import { DefinitionService } from '../shared/definition.service';
 
 @Component({
   selector: 'example-table',
@@ -11,12 +13,11 @@ export class ExampleTableComponent implements OnInit {
   settings: any;
   data: any[];
 
-  constructor(private appService: AppService,) {
-    this.settings = {
-      actions: {
-        position: 'right',
-      },
-      columns: {
+  constructor(
+    private appService: AppService,
+    private definitionService: DefinitionService,
+  ) {
+    this.settings = definitionService.getSmartTableSettings({
         title: {
           title: 'Title',
           width: '30%',
@@ -30,29 +31,26 @@ export class ExampleTableComponent implements OnInit {
         createdAt: {
           title: 'Created At',
           width: '120px',
+          editable: false,
         },
-      },
-      add: {
-        addButtonContent: `<i class="fa fa-plus"></i> Add New`,
-        createButtonContent: `<i class="fa fa-save"></i>`,
-        cancelButtonContent: `<i class="fa fa-undo"></i>`,
-      },
-      edit: {
-        editButtonContent: `<i class="fa fa-edit"></i>`,
-        saveButtonContent: `<i class="fa fa-save"></i>`,
-        cancelButtonContent: `<i class="fa fa-undo"></i>`,
-      },
-      delete: {
-        deleteButtonContent: `<i class="fa fa-trash"></i>`,
-        confirmDelete: true,
-      },
-    };
+      });
   }
 
   ngOnInit() {
     this.appService.getArticles().then((res) => {
       this.data = res;
     });
+  }
+
+  onDeleteConfirm(event): void {
+    console.debug(event);
+    if(confirm('Are you sure you want to delete this item?')){
+      event.confirm.resolve(true);
+      console.info(`deleted: ${event.data.title}`);
+      return;
+    }
+    event.confirm.reject(false);
+    console.info('deletion canceled.')
   }
 }
 

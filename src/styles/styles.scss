@@ -178,20 +178,32 @@ snack-bar-container {
 ng2-smart-table {
   table {
     th {
-      background-color: #efefef;
+      background-color: $gray-lighter;
+    }
+
+    tr {
+      border-bottom: solid 1px $gray-lighter;
+    }
+
+    input.form-control {
+      height: inherit;
     }
   }
 
   ng2-smart-table-pager {
-    text-align: center;
+    text-align: right;
   }
 
   .ng2-smart-actions {
-    i {
-      margin: 0 3px;
-    }
-
     a {
+      padding: 5px;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: $gray-lighter;
+        color: #ffffff;
+      }
+
       &.ng2-smart-action-edit-edit {
         color: $primary-color;
       }
