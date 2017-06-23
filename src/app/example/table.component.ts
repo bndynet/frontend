@@ -1,8 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {MdDialogModule, MdDialogRef, MdDialog} from '@angular/material';
 import { ViewCell } from "ng2-smart-table";
 
 import { AppService } from '../app.service';
 import { DefinitionService } from '../shared/definition.service';
+
+
+import { DialogAlertComponent } from '../shared/dialogAlert.component';
+import { DialogConfirmDeleteComponent } from '../shared/dialogConfirmDelete.component';
 
 @Component({
   selector: 'example-table',
@@ -14,6 +19,7 @@ export class ExampleTableComponent implements OnInit {
   data: any[];
 
   constructor(
+    private dialog: MdDialog,
     private appService: AppService,
     private definitionService: DefinitionService,
   ) {
@@ -44,13 +50,33 @@ export class ExampleTableComponent implements OnInit {
 
   onDeleteConfirm(event): void {
     console.debug(event);
-    if(confirm('Are you sure you want to delete this item?')){
-      event.confirm.resolve(true);
-      console.info(`deleted: ${event.data.title}`);
-      return;
-    }
-    event.confirm.reject(false);
-    console.info('deletion canceled.')
+    let dialogConfirmRef = this.dialog.open(DialogConfirmDeleteComponent, {
+      data: {
+        title: 'Delete Confirmation',
+        content: 'Do you want to delete?',
+        btnYes: 'Yes, I am sure.',
+        btnNo: 'NO!!',
+      },
+    });
+    dialogConfirmRef.afterClosed().subscribe((result) => {
+      if(result) {
+        event.confirm.resolve(true);
+        console.info(`deleted: ${event.data.title}`);
+        let dialogAlertRef = this.dialog.open(DialogAlertComponent, {
+          data: {
+            title: 'Deletion Result',
+            content: 'Deleted Successfully',
+            btn: 'OK, got it.'
+          }
+        });
+        dialogAlertRef.afterClosed().subscribe(() => {
+          console.info(`Alert Dialog Closed`);
+        });
+      } else {
+        event.confirm.reject(false);
+        console.info('deletion canceled.')
+      }
+    });
   }
 }
 

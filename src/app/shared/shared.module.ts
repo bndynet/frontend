@@ -25,14 +25,35 @@ import { DefinitionService } from './definition.service';
 
 // shared components
 import { SharedPageHeaderComponent } from './pageHeader.component';
+import { DialogAlertComponent } from './dialogAlert.component';
+import { DialogConfirmComponent } from "./dialogConfirm.component";
+import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpModule,
+
+    MdButtonModule,
+    MdSelectModule,
+    MdIconModule,
+    MdMenuModule,
+    MdCardModule,
+    MdProgressSpinnerModule,
+    MdInputModule,
+    MdDialogModule,
+    MdAutocompleteModule,
+    MdSnackBarModule,
+    MdRadioModule,
+    MdCheckboxModule,
+    MdTooltipModule,
+    MdSlideToggleModule,
   ],
   declarations: [
     SharedPageHeaderComponent,
+    DialogAlertComponent,
+    DialogConfirmComponent,
+    DialogConfirmDeleteComponent,
   ],
   exports: [
     CommonModule,
@@ -56,10 +77,13 @@ import { SharedPageHeaderComponent } from './pageHeader.component';
 
     SharedPageHeaderComponent,
   ],
+  entryComponents: [
+    DialogAlertComponent,
+    DialogConfirmComponent,
+    DialogConfirmDeleteComponent,
+  ],
   providers: [
-    DefinitionService
+    DefinitionService,
   ],
 })
-export class SharedModule {
-
-}
+export class SharedModule {}

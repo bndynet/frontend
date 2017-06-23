@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdSnackBar, MdDialog, MdDialogRef } from '@angular/material';
+import { MdSnackBar, MdDialog } from '@angular/material';
 
 @Component({
   selector: 'auth-logout',
@@ -40,7 +40,6 @@ export class AuthLogoutComponent implements OnInit {
     </md-dialog-content>
     <md-dialog-actions>
       <button md-raised-button md-dialog-close>No</button>
-      <!-- Can optionally provide a result for the closing dialog. -->
       <button md-raised-button class="danger" [md-dialog-close]="true">Yes</button>
     </md-dialog-actions>`,
 })
