@@ -16,6 +16,8 @@
 
 An admin template project featuring Angular 4, Angular Material, TypeScript and Webpack 2.
 
+![](https://raw.githubusercontent.com/bndynet/frontend/master/screenshots/form.png)
+
 ### Quick start
 **Make sure you have Node version >= 6.0 and NPM >= 3**
 > Clone/Download the repo

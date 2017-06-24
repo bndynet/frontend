@@ -20,7 +20,7 @@ export class AuthLogoutComponent implements OnInit {
     }).afterClosed().subscribe((res) => {
       const msg = res ? `Your choice: ${res}` : 'Nothing to do';
       this.snackBar.open(msg, '', {
-        duration: 500,
+        duration: 1500,
         extraClasses: ['success'],
       }).afterDismissed().subscribe(()=>{
         console.debug('Snack bar has been closed!');
