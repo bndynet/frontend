@@ -18,6 +18,7 @@ import {
   MdCheckboxModule,
   MdTooltipModule,
   MdSlideToggleModule,
+  MdTabsModule,
 } from '@angular/material';
 
 // services
@@ -48,6 +49,7 @@ import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
     MdCheckboxModule,
     MdTooltipModule,
     MdSlideToggleModule,
+    MdTabsModule,
   ],
   declarations: [
     SharedPageHeaderComponent,
@@ -74,6 +76,7 @@ import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
     MdCheckboxModule,
     MdTooltipModule,
     MdSlideToggleModule,
+    MdTabsModule,
 
     SharedPageHeaderComponent,
   ],

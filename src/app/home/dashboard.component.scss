@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+.mat-card {
+
+  .mat-card-header {
+    flex-direction: row-reverse;
+    margin: 0 -8px;
+
+    .mat-card-avatar {
+      flex: 1;
+      font-size: 4rem;
+      color: $gray-light;
+      text-align: right;
+    }
+
+    .mat-card-header-text {
+      flex: 1;
+    }
+
+    .mat-card-title {
+      font-size: 1.75em;
+      margin-bottom: 8px;
+    }
+
+    .mat-card-subtitle {
+      margin-bottom: 0;
+    }
+  }
+
+  .mat-card-content {
+    .mat-card-title {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+
+    .mat-card-subtitle {
+      font-size: 1rem;
+    }
+  }
+}
