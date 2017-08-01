@@ -16,6 +16,7 @@ html, body {
   margin: 0;
   color: $text-color;
   font-size: $font-size;
+  height: 100%;
 }
 
 a {
@@ -149,6 +150,8 @@ snack-bar-container {
 
 .page-body {
   padding: 20px 50px;
+  height: calc(100% - #{$page-header-height});
+  overflow: auto;
 
   &.full {
     padding: 0;

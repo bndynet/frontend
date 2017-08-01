@@ -1,23 +1,13 @@
 @import "../../styles/variables";
 
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   margin-bottom: 0;
+  padding-left: 3rem;
   border-radius: 0;
-  background-color: $primary-color;
-
-  .navbar-header {
-    width: $sidebar-width;
-
-    .navbar-brand {
-      padding: 0;
-
-      .brand-logo {
-        img {
-          height: 46px;
-        }
-      }
-    }
-  }
+  background-color: $brand-color;
 
   .navbar-right {
     margin-right: 0;

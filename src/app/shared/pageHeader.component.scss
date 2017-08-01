@@ -1,7 +1,8 @@
 @import "../../styles/variables";
 
 .page-header {
-  height: inherit;
+  height: $page-header-height;
+  overflow: hidden;
   padding: 15px 30px;
   margin: 0;
   background-color: #fafbfc;

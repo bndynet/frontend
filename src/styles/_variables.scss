@@ -4,6 +4,8 @@ $success-color: #3c763d;
 $warning-color: #ff9800;
 $danger-color: #e00000;
 
+$brand-color: $primary-color;
+
 $gray-base: #000;
 $gray-darker: lighten($gray-base, 13.5%);
 $gray-dark: lighten($gray-base, 20%);
@@ -19,6 +21,9 @@ $sidebar-color-active: $primary-color;
 $sidebar-text-color: $text-color;
 
 
+$header-height: 52px;
 $sidebar-width: 220px;
 $font-size: 13px;
+
+$page-header-height: 94px;
 

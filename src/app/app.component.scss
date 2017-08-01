@@ -1,21 +1,33 @@
 @import "../styles/variables";
-
 app {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  display: block;
+  height: 100%; 
+  .btn-menu-toggle {
+    position: absolute;
+    z-index: 9999;
+    display: block;
+    padding: 0 1rem;
+    height: $header-height;
+    line-height: $header-height;
+    color: #ffffff;
+    text-align: center;
+    &:hover {
+      background-color: darken($brand-color, 10%);
+    }
+  }
+  main {
+    padding-top: $header-height;
+    height: 100%;
 
+    .page-main {
+      height: 100%;
+      overflow: auto;
+    }
+  }
   nav {
-    .mat-button, .mat-icon-button, .mat-raised-button {
+    .mat-button,
+    .mat-icon-button,
+    .mat-raised-button {
       .mat-button-wrapper {
         i {
           vertical-align: inherit;
@@ -23,7 +35,6 @@ app {
       }
     }
   }
-
   .mat-progress-bar {
     position: absolute;
     top: 0;
@@ -31,24 +42,13 @@ app {
     z-index: 99;
     height: 3px;
   }
-
-  .main-body {
-    display: flex;
-    flex: 1 1 auto;
-
-    md-sidenav-container {
-      width: 100%;
-      background-color: #ffffff;
-
-      md-sidenav {
-        width: $sidebar-width;
-        background-color: $sidebar-color;
-        border-right: solid 1px #cfdbe2;
-      }
-
-      .mat-sidenav-content {
-
-      }
+  md-sidenav-container {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    md-sidenav {
+      width: $sidebar-width;
+      background-color: $sidebar-color;
     }
   }
 }
