@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MdListModule,
+  MdTableModule,
   MdGridListModule,
   MdDatepickerModule,
-  MdNativeDateModule
+  MdNativeDateModule,
 } from '@angular/material';
+import { CdkTableModule } from '@angular/cdk';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -16,6 +18,7 @@ import { ExampleGridComponent } from './grid.component';
 import { ExampleListComponent } from './list.component';
 import { ExampleArticleComponent } from './article.component';
 import { ExampleTableComponent, ExampleTableCustomRenderColumnComponent } from './table.component';
+import { ExampleMdTableComponent } from './mdTable.component';
 
 const exampleRoutes: Routes = [
   { path: 'example-grid', component: ExampleGridComponent },
@@ -23,6 +26,7 @@ const exampleRoutes: Routes = [
   { path: 'example-article', component: ExampleArticleComponent },
   { path: 'example-list', component: ExampleListComponent },
   { path: 'example-table', component: ExampleTableComponent },
+  { path: 'example-md-table', component: ExampleMdTableComponent },
 ];
 
 @NgModule({
@@ -34,6 +38,9 @@ const exampleRoutes: Routes = [
     MdGridListModule,
     MdDatepickerModule,
     MdNativeDateModule,
+    MdTableModule,
+    CdkTableModule,
+
     RouterModule.forChild(exampleRoutes),
 
     SharedModule,
@@ -44,6 +51,7 @@ const exampleRoutes: Routes = [
     ExampleGridComponent,
     ExampleFormComponent,
     ExampleTableComponent,
+    ExampleMdTableComponent,
     ExampleTableCustomRenderColumnComponent,
   ],
   entryComponents: [
