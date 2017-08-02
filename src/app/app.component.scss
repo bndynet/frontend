@@ -16,6 +16,7 @@ app {
     }
   }
   main {
+    background-color: white;
     padding-top: $header-height;
     height: 100%;
 
@@ -42,10 +43,10 @@ app {
     z-index: 99;
     height: 3px;
   }
-  md-sidenav-container {
+  .mat-sidenav-container {
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: $brand-color;
     md-sidenav {
       width: $sidebar-width;
       background-color: $sidebar-color;

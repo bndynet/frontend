@@ -9,7 +9,6 @@
   .sidebar-header {
     height: $header-height;
     background-color: $brand-color;
-    margin-right: -1px;
   }
   nav {
     height: calc(100% - #{$header-height});

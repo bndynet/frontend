@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdProgressBarModule, MdSidenavModule, MdIconRegistry } from '@angular/material';
+import { MdButtonModule, MdProgressBarModule, MdSidenavModule, MdIconRegistry, MdSnackBarModule } from '@angular/material';
 import 'hammerjs';
 import {
   NgModule,
@@ -64,6 +64,7 @@ type StoreType = {
     MdButtonModule,
     MdProgressBarModule,
     MdSidenavModule,
+    MdSnackBarModule,
 
     CoreModule,
     HomeModule,

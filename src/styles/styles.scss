@@ -112,6 +112,7 @@ label {
 }
 
 .mat-dialog-container {
+  margin-top: -10rem;
   .mat-dialog-actions {
     margin: 0 -24px;
     padding: 25px 0 0 0;
@@ -143,8 +144,17 @@ label {
 }
 
 snack-bar-container {
+  &.info {
+    background-color: $info-color;
+  }
   &.success {
     background-color: $success-color;
+  }
+  &.warning {
+    background-color: $warning-color;
+  }
+  &.error {
+    background-color: $danger-color;
   }
 }
 

@@ -1,10 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {MdDialogModule, MdDialogRef, MdDialog} from '@angular/material';
+import { MdDialogModule, MdDialogRef, MdDialog } from '@angular/material';
 import { ViewCell } from "ng2-smart-table";
 
 import { AppService } from '../app.service';
 import { DefinitionService } from '../shared/definition.service';
-
 
 import { DialogAlertComponent } from '../shared/dialogAlert.component';
 import { DialogConfirmDeleteComponent } from '../shared/dialogConfirmDelete.component';
@@ -71,10 +70,12 @@ export class ExampleTableComponent implements OnInit {
         });
         dialogAlertRef.afterClosed().subscribe(() => {
           console.info(`Alert Dialog Closed`);
+          this.appService.success('Successful');
         });
       } else {
         event.confirm.reject(false);
         console.info('deletion canceled.')
+        this.appService.error('Canceled');
       }
     });
   }
