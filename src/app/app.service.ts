@@ -4,6 +4,8 @@ import { MdSnackBar, MdSnackBarRef, SimpleSnackBar } from '@angular/material';
 
 import 'rxjs/add/operator/toPromise';
 
+import { IAppConfigInfo, AppConfig, Environment } from "./app.config";
+
 export type InternalStateType = {
   [key: string]: any
 };
@@ -13,54 +15,56 @@ export class AppService {
 
   @Output() loadEvent: EventEmitter<boolean> = new EventEmitter(true);
 
+  public config: IAppConfigInfo;
+
   constructor(
     private http: Http,
     private snackBar: MdSnackBar,
   ){
-
+    this.config = new AppConfig(Environment.prod).currentConfig;
   }
 
   setLoading(value: boolean): void {
-      this.loadEvent.emit(value);
+    this.loadEvent.emit(value);
   }
 
   getMainMenus(): Promise<any[]> {
-    return this.http.get('/assets/mock-data/data.json').toPromise().then(res => res.json().mainMenus);
+    return this.http.get('/assets/mock-data/data.json').toPromise().then((res: any) => res.json().mainMenus);
   }
 
   getSideMenus(): Promise<any[]> {
-    return this.http.get('/assets/mock-data/data.json').toPromise().then(res => res.json().sideMenus);
+    return this.http.get('/assets/mock-data/data.json').toPromise().then((res: any) => res.json().sideMenus);
   }
 
   getArticles(): Promise<any[]> {
-    return this.http.get('/assets/mock-data/data.json').toPromise().then(res => res.json().articles);
+    return this.http.get('/assets/mock-data/data.json').toPromise().then((res: any) => res.json().articles);
   }
 
   info(msg: string): MdSnackBarRef<SimpleSnackBar> {
-    return this.snackBar.open(msg, null, {
+    return this.snackBar.open(msg, 'x', {
       extraClasses: ['info'],
-      duration: 1000,
+      duration: this.config.infoDuration,
     });
   }
 
   success(msg: string): MdSnackBarRef<SimpleSnackBar> {
-    return this.snackBar.open(msg, null, {
+    return this.snackBar.open(msg, 'x', {
       extraClasses: ['success'],
-      duration: 1000,
+      duration: this.config.successDuration,
     });
   }
 
   warning(msg: string): MdSnackBarRef<SimpleSnackBar> {
-    return this.snackBar.open(msg, null, {
+    return this.snackBar.open(msg, 'x', {
       extraClasses: ['warning'],
-      duration: 10000,
+      duration: this.config.warningDuration,
     });
   }
 
   error(msg: string): MdSnackBarRef<SimpleSnackBar> {
-    return this.snackBar.open(msg, null, {
+    return this.snackBar.open(msg, 'x', {
       extraClasses: ['error'],
-      duration: 1000,
+      duration: this.config.errorDuration,
     });
   }
 }

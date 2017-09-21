@@ -1,7 +1,3 @@
-/**
- * @author: @AngularClass
- */
-
 const helpers = require('./helpers');
 /**
  * Used to merge webpack configs

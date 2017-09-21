@@ -42,7 +42,7 @@ export class ExampleTableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.appService.getArticles().then((res) => {
+    this.appService.getArticles().then((res: any) => {
       this.data = res;
     });
   }
@@ -53,8 +53,8 @@ export class ExampleTableComponent implements OnInit {
       data: {
         title: 'Delete Confirmation',
         content: 'Do you want to delete?',
-        btnYes: 'Yes, I am sure.',
-        btnNo: 'NO!!',
+        btnYes: 'Yes',
+        btnNo: 'No',
       },
     });
     dialogConfirmRef.afterClosed().subscribe((result) => {
@@ -75,7 +75,7 @@ export class ExampleTableComponent implements OnInit {
       } else {
         event.confirm.reject(false);
         console.info('deletion canceled.')
-        this.appService.error('Canceled');
+        this.appService.info('Canceled');
       }
     });
   }
