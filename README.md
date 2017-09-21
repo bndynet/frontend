@@ -29,12 +29,16 @@ git clone https://github.com/bndynet/frontend.git
 # change directory
 cd frontend
 
-# install the repo with npm
-npm install
+# install all the dependencies of project
+yarn or yarn install
 
 # start the server
-npm start
-
-# if you're in China use cnpm
-# https://github.com/cnpm/cnpm
+yarn start
 ```
+
+### Misc
+**if you're in China use cnpm https://github.com/cnpm/cnpm**
+
+#### yarn usage
+
+https://yarnpkg.com/en/docs/usage
