@@ -112,49 +112,50 @@ label {
 }
 
 .mat-dialog-container {
-  margin-top: -10rem;
-  .mat-dialog-actions {
-    margin: 0 -24px;
-    padding: 25px 0 0 0;
+  .mat-dialog-title {
+    text-align: center;
+  }
 
+  .mat-dialog-content {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .mat-dialog-actions {
     & > * {
       flex: 1;
-      border-radius: 0;
-      box-shadow: none;
-      border-color: #efefef;
-      border-width: 1px 0 0 1px;
-      border-style: solid;
-
-      &:first-child {
-        border-left: none;
-      }
-
-      &:hover {
-        background-color: $primary-color;
-        color: #ffffff;
-      }
-
-      &.danger {
-        &:hover {
-          background-color: $danger-color;
-        }
-      }
     }
+  }
+
+  .dialog-alert {
+
   }
 }
 
-snack-bar-container {
+snack-bar-container.mat-snack-bar-container {
+  border-radius: 2px 2px 0 0;
+
   &.info {
-    background-color: $info-color;
+    background-color: rgba($info-color, .9);
   }
   &.success {
-    background-color: $success-color;
+    background-color: rgba($success-color, .9);
   }
   &.warning {
-    background-color: $warning-color;
+    background-color: rgba($warning-color, .9);
   }
   &.error {
-    background-color: $danger-color;
+    background-color: rgba($danger-color, .9);
+  }
+
+  .mat-simple-snackbar-action {
+    color: $gray-lighter;
+    font-weight: normal;
+    margin-right: -14px;
+
+    &:hover {
+      color: #ffffff;
+    }
   }
 }
 

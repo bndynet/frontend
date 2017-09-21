@@ -8,8 +8,8 @@ import { MD_DIALOG_DATA } from '@angular/material';
 <h2 md-dialog-title>{{title}}</h2>
 <md-dialog-content>{{content}}</md-dialog-content>
 <md-dialog-actions>
-  <button md-raised-button md-dialog-close>{{btnNo}}</button>
-  <button md-raised-button [ngClass]="btnYesClass" [md-dialog-close]="true">{{btnYes}}</button>
+  <button md-button md-dialog-close>{{btnNo}}</button>
+  <button md-button [ngClass]="btnYesClass" [md-dialog-close]="true">{{btnYes}}</button>
 </md-dialog-actions>
 `,
 })

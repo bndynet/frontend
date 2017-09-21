@@ -7,7 +7,7 @@ import { MD_DIALOG_DATA } from '@angular/material';
 <h2 md-dialog-title>{{title}}</h2>
 <md-dialog-content>{{content}}</md-dialog-content>
 <md-dialog-actions>
-  <button md-raised-button [md-dialog-close]="true">{{btn}}</button>
+  <button md-button [md-dialog-close]="true">{{btn}}</button>
 </md-dialog-actions>
 `,
 })
