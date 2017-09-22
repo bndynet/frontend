@@ -6,7 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 
 import { AuthLoginComponent } from './login.component';
-import { AuthLogoutComponent, AuthLogoutConfirmComponent } from './logout.component';
+import { AuthLogoutComponent } from './logout.component';
+import { AuthLogoutConfirmComponent } from './logoutConfirm.component';
 
 const authRouters: Routes = [
   { path: 'login', component: AuthLoginComponent },
@@ -30,4 +31,3 @@ const authRouters: Routes = [
   ],
 })
 export class AuthModule {}
-

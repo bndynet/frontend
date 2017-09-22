@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit
 } from '@angular/core';
 
 @Component({
@@ -8,10 +7,4 @@ import {
   styleUrls: ['article.component.scss'],
   templateUrl: 'article.component.html'
 })
-export class ExampleArticleComponent implements OnInit {
-
-  constructor(
-  ) { }
-
-  public ngOnInit() { }
-}
+export class ExampleArticleComponent { }

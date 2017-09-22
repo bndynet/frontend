@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
 
 import { config } from './config/config';
-import { config_dev } from './config/config.dev';
-import { config_prod } from './config/config.prod';
+import { configDev } from './config/config.dev';
+import { configProd } from './config/config.prod';
 
 export interface IAppConfigInfo {
   host?: string;
@@ -16,22 +16,21 @@ export interface IAppConfigInfo {
 export enum Environment {
   dev,
   prod,
-};
+}
 
 export class AppConfig {
-
-  private configs: Object = {
-    dev: _.assignIn({}, config, config_dev),
-    prod: _.assignIn({}, config, config_prod)
-  };
   public currentConfig: IAppConfigInfo;
+  private configs: object = {
+    dev: _.assignIn({}, config, configDev),
+    prod: _.assignIn({}, config, configProd),
+  };
 
   constructor(env?: Environment) {
     if (env) {
       this.currentConfig = this.configs[Environment[env]] as IAppConfigInfo;
     } else {
       const host = window.location.host.toLowerCase();
-      for(const key in this.configs) {
+      for (const key in this.configs) {
         if (host === this.configs[key].host.toLowerCase()) {
           this.currentConfig = this.configs[key];
           break;

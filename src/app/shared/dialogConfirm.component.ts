@@ -14,17 +14,19 @@ import { MD_DIALOG_DATA } from '@angular/material';
 `,
 })
 export class DialogConfirmComponent {
-  @Input() title: string;
-  @Input() content: string;
-  @Input() btnNo: string;
-  @Input() btnYes: string;
-  @Input() btnYesClass: string;
+  @Input() public title: string;
+  @Input() public content: string;
+  @Input() public btnNo: string;
+  @Input() public btnYes: string;
+  @Input() public btnYesClass: string;
 
   constructor(
-    @Inject(MD_DIALOG_DATA) public data: any,
+    @Inject(MD_DIALOG_DATA) private data: any,
   ) {
 
-    if(!data) data = {};
+    if (!data) {
+      data = {};
+    }
 
     this.title =  data.title || 'No title';
     this.content = data.content || 'No content';

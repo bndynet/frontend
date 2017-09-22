@@ -7,15 +7,15 @@ import { AppService } from '../app.service';
   templateUrl: 'list.component.html'
 })
 export class ExampleListComponent implements OnInit {
-  data: any[];
+  public data: any[];
 
   constructor(
     private appService: AppService,
   ) {
   }
 
-  ngOnInit() {
-    this.appService.getArticles().then(res => {
+  public ngOnInit() {
+    this.appService.getArticles().then((res: any) => {
       this.data = res;
     });
   }

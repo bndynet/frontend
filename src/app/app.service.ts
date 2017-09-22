@@ -4,64 +4,66 @@ import { MdSnackBar, MdSnackBarRef, SimpleSnackBar } from '@angular/material';
 
 import 'rxjs/add/operator/toPromise';
 
-import { IAppConfigInfo, AppConfig, Environment } from "./app.config";
+import { IAppConfigInfo, AppConfig, Environment } from './app.config';
 
-export type InternalStateType = {
-  [key: string]: any
-};
+export interface InternalStateType {
+  [key: string]: any;
+}
 
 @Injectable()
 export class AppService {
 
-  @Output() loadEvent: EventEmitter<boolean> = new EventEmitter(true);
-
   public config: IAppConfigInfo;
+  @Output() public loadEvent: EventEmitter<boolean> = new EventEmitter(true);
 
   constructor(
     private http: Http,
     private snackBar: MdSnackBar,
-  ){
+  ) {
     this.config = new AppConfig(Environment.prod).currentConfig;
   }
 
-  setLoading(value: boolean): void {
+  public setLoading(value: boolean): void {
     this.loadEvent.emit(value);
   }
 
-  getMainMenus(): Promise<any[]> {
-    return this.http.get('/assets/mock-data/data.json').toPromise().then((res: any) => res.json().mainMenus);
+  public getMainMenus(): Promise<any[]> {
+    return this.http.get('/assets/mock-data/data.json').toPromise()
+      .then((res: any) => res.json().mainMenus);
   }
 
-  getSideMenus(): Promise<any[]> {
-    return this.http.get('/assets/mock-data/data.json').toPromise().then((res: any) => res.json().sideMenus);
+  public getSideMenus(): Promise<any[]> {
+    return this.http.get('/assets/mock-data/data.json').toPromise()
+      .then((res: any) => res.json().sideMenus);
   }
 
-  getArticles(): Promise<any[]> {
-    return this.http.get('/assets/mock-data/data.json').toPromise().then((res: any) => res.json().articles);
+  public getArticles(): Promise<any[]> {
+    return this.http.get('/assets/mock-data/data.json').toPromise()
+      .then((res: any) => res.json().articles);
   }
 
-  info(msg: string): MdSnackBarRef<SimpleSnackBar> {
+  public info(msg: string): MdSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open(msg, 'x', {
       extraClasses: ['info'],
       duration: this.config.infoDuration,
     });
   }
 
-  success(msg: string): MdSnackBarRef<SimpleSnackBar> {
+  public success(msg: string): MdSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open(msg, 'x', {
       extraClasses: ['success'],
       duration: this.config.successDuration,
     });
   }
 
-  warning(msg: string): MdSnackBarRef<SimpleSnackBar> {
+  public warning(msg: string): MdSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open(msg, 'x', {
       extraClasses: ['warning'],
       duration: this.config.warningDuration,
     });
   }
 
-  error(msg: string): MdSnackBarRef<SimpleSnackBar> {
+  public error(msg: string): MdSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open(msg, 'x', {
       extraClasses: ['error'],
       duration: this.config.errorDuration,
@@ -84,7 +86,7 @@ export class AppState {
    * Never allow mutation
    */
   public set state(value) {
-    throw new Error('do not mutate the `.state` directly');
+    throw new ReferenceError('do not mutate the `.state` directly');
   }
 
   public get(prop?: any) {

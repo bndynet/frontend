@@ -1,6 +1,6 @@
 import { IAppConfigInfo } from '../app.config';
 
-export const config_prod: IAppConfigInfo = {
+export const configProd: IAppConfigInfo = {
   host: 'frontend.bndy.net',
   apiEndpoint: '',
 };

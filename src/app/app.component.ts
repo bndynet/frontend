@@ -27,25 +27,22 @@ import { AppService, AppState } from './app.service';
 export class AppComponent implements OnInit {
   public name = 'Angular 2 Webpack Starter';
   public url = 'http://bndy.net';
-  menus: any[];
-  isLoading: boolean = true;
+  public isLoading: boolean = true;
 
   constructor(
     private router: Router,
-    public appState: AppState,
     private appService: AppService,
   ) {
-    this.router.events.forEach((event) => {
-      if(event instanceof NavigationStart) {
+    this.router.events.forEach((event: any) => {
+      if (event instanceof NavigationStart) {
         appService.setLoading(true);
-      }
-      else if (event instanceof NavigationEnd) {
+      } else if (event instanceof NavigationEnd) {
         appService.setLoading(false);
       }
-    });
+    }).then();
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.appService.loadEvent.subscribe((value) => {
       this.isLoading = value;
     });

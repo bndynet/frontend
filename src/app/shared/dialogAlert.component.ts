@@ -12,14 +12,16 @@ import { MD_DIALOG_DATA } from '@angular/material';
 `,
 })
 export class DialogAlertComponent {
-  title: string;
-  content: string;
-  btn: string;
+  public title: string;
+  public content: string;
+  public btn: string;
 
   constructor(
-    @Inject(MD_DIALOG_DATA) public data: any,
+    @Inject(MD_DIALOG_DATA) private data: any,
   ) {
-    if(!data) data = {};
+    if (!data) {
+      data = {};
+    }
 
     this.btn = data.btn || 'OK';
     this.title = data.title || 'No title';

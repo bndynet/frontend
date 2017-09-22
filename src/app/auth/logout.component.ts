@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MdSnackBar, MdDialog } from '@angular/material';
+
+import { AuthLogoutConfirmComponent } from './logoutConfirm.component';
 
 @Component({
   selector: 'auth-logout',
@@ -7,49 +9,22 @@ import { MdSnackBar, MdDialog } from '@angular/material';
   templateUrl: 'logout.component.html',
 })
 
-export class AuthLogoutComponent implements OnInit {
+export class AuthLogoutComponent {
   constructor(
     private dialog: MdDialog,
     private snackBar: MdSnackBar,
-  ){ }
+  ) { }
 
-  public ngOnInit() { }
-
-  onLogout() {
+ public onLogout() {
     this.dialog.open(AuthLogoutConfirmComponent, {
     }).afterClosed().subscribe((res) => {
       const msg = res ? `Your choice: ${res}` : 'Nothing to do';
       this.snackBar.open(msg, '', {
         duration: 1500,
         extraClasses: ['success'],
-      }).afterDismissed().subscribe(()=>{
+      }).afterDismissed().subscribe(() => {
         console.debug('Snack bar has been closed!');
       });
     });
-  }
-}
-
-
-@Component({
-  selector: 'auth-logout-confirm',
-  styles: [],
-  template: `
-    <h2 md-dialog-title>Sign Out</h2>
-    <md-dialog-content>
-      Are you sure you want to sign out?
-    </md-dialog-content>
-    <md-dialog-actions>
-      <button md-raised-button md-dialog-close>No</button>
-      <button md-raised-button class="danger" [md-dialog-close]="true">Yes</button>
-    </md-dialog-actions>`,
-})
-export class AuthLogoutConfirmComponent implements OnInit {
-  constructor(
-  ) {
-
-  }
-
-  ngOnInit() {
-
   }
 }

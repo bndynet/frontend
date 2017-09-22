@@ -1,12 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MdDialogModule, MdDialogRef, MdDialog } from '@angular/material';
-import { ViewCell } from "ng2-smart-table";
+import { Component, OnInit } from '@angular/core';
+import { MdDialog } from '@angular/material';
 
 import { AppService } from '../app.service';
 import { DefinitionService } from '../shared/definition.service';
 
 import { DialogAlertComponent } from '../shared/dialogAlert.component';
 import { DialogConfirmDeleteComponent } from '../shared/dialogConfirmDelete.component';
+import { ExampleTableCustomRenderColumnComponent } from './tableCustomRenderColumn.component';
 
 @Component({
   selector: 'example-table',
@@ -14,8 +14,8 @@ import { DialogConfirmDeleteComponent } from '../shared/dialogConfirmDelete.comp
   templateUrl: './table.component.html',
 })
 export class ExampleTableComponent implements OnInit {
-  settings: any;
-  data: any[];
+  public settings: any;
+  public data: any[];
 
   constructor(
     private dialog: MdDialog,
@@ -41,15 +41,15 @@ export class ExampleTableComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.appService.getArticles().then((res: any) => {
       this.data = res;
     });
   }
 
-  onDeleteConfirm(event): void {
+  public onDeleteConfirm(event): void {
     console.debug(event);
-    let dialogConfirmRef = this.dialog.open(DialogConfirmDeleteComponent, {
+    const dialogConfirmRef = this.dialog.open(DialogConfirmDeleteComponent, {
       data: {
         title: 'Delete Confirmation',
         content: 'Do you want to delete?',
@@ -58,10 +58,10 @@ export class ExampleTableComponent implements OnInit {
       },
     });
     dialogConfirmRef.afterClosed().subscribe((result) => {
-      if(result) {
+      if (result) {
         event.confirm.resolve(true);
         console.info(`deleted: ${event.data.title}`);
-        let dialogAlertRef = this.dialog.open(DialogAlertComponent, {
+        const dialogAlertRef = this.dialog.open(DialogAlertComponent, {
           data: {
             title: 'Deletion Result',
             content: 'Deleted Successfully',
@@ -74,26 +74,9 @@ export class ExampleTableComponent implements OnInit {
         });
       } else {
         event.confirm.reject(false);
-        console.info('deletion canceled.')
+        console.info('deletion canceled.');
         this.appService.info('Canceled');
       }
     });
-  }
-}
-
-
-@Component({
-  template: `
-    <span>{{returnValue.substring(0, 50)}}...</span>
-  `,
-})
-export class ExampleTableCustomRenderColumnComponent implements ViewCell, OnInit {
-  returnValue: string;
-
-  @Input() value: string;
-  @Input() rowData: any;
-
-  ngOnInit() {
-    this.returnValue = this.value.toString();
   }
 }

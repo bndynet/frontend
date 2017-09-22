@@ -2,9 +2,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DefinitionService {
-  constructor(){
-  }
-
   public getSmartTableSettings(columnsObject: any): any {
     return {
       actions: {

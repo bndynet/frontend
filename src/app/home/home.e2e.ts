@@ -11,14 +11,14 @@ describe('App', () => {
   });
 
   it('should have a title', async () => {
-    let subject = await browser.getTitle();
-    let result  = 'Frontend';
+    const subject = await browser.getTitle();
+    const result  = 'Frontend';
     expect(subject).toEqual(result);
   });
 
   it('should have `your content here` x-large', async () => {
-    let subject = await element(by.css('[x-large]')).getText();
-    let result  = 'Your Content Here';
+    const subject = await element(by.css('[x-large]')).getText();
+    const result  = 'Your Content Here';
     expect(subject).toEqual(result);
   });
 

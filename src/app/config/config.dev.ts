@@ -1,6 +1,6 @@
 import { IAppConfigInfo } from '../app.config';
 
-export const config_dev: IAppConfigInfo = {
+export const configDev: IAppConfigInfo = {
   host: 'localhost:9000',
   apiEndpoint: '',
 };

@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit
 } from '@angular/core';
 
 @Component({
@@ -8,10 +7,6 @@ import {
   styleUrls: [ './home.component.scss' ],
   templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   public localState = { value: '' };
-  constructor(
-  ) { }
-
-  public ngOnInit() { }
 }

@@ -27,7 +27,7 @@ import { DefinitionService } from './definition.service';
 // shared components
 import { SharedPageHeaderComponent } from './pageHeader.component';
 import { DialogAlertComponent } from './dialogAlert.component';
-import { DialogConfirmComponent } from "./dialogConfirm.component";
+import { DialogConfirmComponent } from './dialogConfirm.component';
 import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
 
 @NgModule({

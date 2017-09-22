@@ -17,7 +17,8 @@ import { ExampleFormComponent } from './form.component';
 import { ExampleGridComponent } from './grid.component';
 import { ExampleListComponent } from './list.component';
 import { ExampleArticleComponent } from './article.component';
-import { ExampleTableComponent, ExampleTableCustomRenderColumnComponent } from './table.component';
+import { ExampleTableComponent } from './table.component';
+import { ExampleTableCustomRenderColumnComponent } from './tableCustomRenderColumn.component';
 import { ExampleMdTableComponent } from './mdTable.component';
 
 const exampleRoutes: Routes = [

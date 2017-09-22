@@ -9,15 +9,15 @@ import 'bootstrap/dist/js/bootstrap.js';
   templateUrl: './header.component.html',
 })
 export class AppHeaderComponent implements OnInit {
-  menus: any[];
+  public menus: any[];
 
   constructor(
     private appService: AppService,
   ) {
   }
 
-  public ngOnInit () {
-    this.appService.getMainMenus().then(menus => {
+  public ngOnInit() {
+    this.appService.getMainMenus().then((menus: any) => {
       this.menus = menus;
     });
   }

@@ -14,13 +14,13 @@ import * as _ from 'lodash';
   templateUrl: 'form.component.html'
 })
 
-export class ExampleFormComponent implements OnInit {
-  states: string[] = [];
-  filteredStates: any;
-  formCtrl: FormControl;
-  seasons: string[];
-  isLoading: boolean = false;
-  chksValue: any = {};
+export class ExampleFormComponent {
+  public states: string[] = [];
+  public filteredStates: any;
+  public formCtrl: FormControl;
+  public seasons: string[];
+  public isLoading: boolean = false;
+  public chksValue: any = {};
 
   constructor(
     private appService: AppService,
@@ -32,7 +32,7 @@ export class ExampleFormComponent implements OnInit {
       'Summer',
       'Autumn',
     ];
-    _.each(this.seasons, (item) => {
+    _.each(this.seasons, (item: any) => {
       this.chksValue[item] = false;
     });
     this.states = [
@@ -89,19 +89,15 @@ export class ExampleFormComponent implements OnInit {
     ];
     this.filteredStates = this.formCtrl.valueChanges
       .startWith(null)
-      .map(name => this.filterStates(name));
+      .map((name: string) => this.filterStates(name));
   }
 
-  public ngOnInit() {
-
-  }
-
-  filterStates(val: string) {
-    return val ? this.states.filter(s => new RegExp(`^${val}`, 'gi').test(s))
+  public filterStates(val: string) {
+    return val ? this.states.filter((s: any) => new RegExp(`^${val}`, 'gi').test(s))
       : this.states;
   }
 
-  submitForm(): void {
+  public submitForm(): void {
     this.isLoading = !this.isLoading;
     this.appService.setLoading(this.isLoading);
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'auth-login',
@@ -6,14 +6,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'login.component.html'
 })
 
-export class AuthLoginComponent implements OnInit {
+export class AuthLoginComponent {
   public model = { account: '', password: '' };
   public isLoading: boolean = false;
-
-  constructor(
-  ){ }
-
-  public ngOnInit() { }
 
   public onLogin() {
       this.isLoading = !this.isLoading;
