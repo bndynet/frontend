@@ -1,4 +1,5 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import {
   inject,
   async,
@@ -9,6 +10,7 @@ import {
 /**
  * Load the implementations that should be tested
  */
+import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 import { AppState } from './app.service';
 
@@ -23,7 +25,7 @@ describe(`App`, () => {
     TestBed.configureTestingModule({
       declarations: [ AppComponent ],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [AppState]
+      providers: [HttpModule, AppModule, AppState]
     })
     /**
      * Compile template and css
@@ -49,17 +51,8 @@ describe(`App`, () => {
     expect(comp).toBeDefined();
   });
 
-  it(`should be @AngularClass`, () => {
-    expect(comp.url).toEqual('https://twitter.com/AngularClass');
-    expect(comp.name).toEqual('Angular 2 Webpack Starter');
+  it(`should be my app`, () => {
+    expect(comp.url).toEqual('http://bndy.net');
+    expect(comp.name).toEqual('Frontend');
   });
-
-  it('should log ngOnInit', () => {
-    spyOn(console, 'log');
-    expect(console.log).not.toHaveBeenCalled();
-
-    comp.ngOnInit();
-    expect(console.log).toHaveBeenCalled();
-  });
-
 });

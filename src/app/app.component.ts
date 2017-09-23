@@ -25,7 +25,7 @@ import { AppService, AppState } from './app.service';
   providers: [AppService],
 })
 export class AppComponent implements OnInit {
-  public name = 'Angular 2 Webpack Starter';
+  public name = 'Frontend';
   public url = 'http://bndy.net';
   public isLoading: boolean = true;
 

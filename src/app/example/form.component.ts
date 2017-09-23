@@ -15,12 +15,17 @@ import * as _ from 'lodash';
 })
 
 export class ExampleFormComponent {
+  public auto: any;
   public states: string[] = [];
+  public state: any;
   public filteredStates: any;
   public formCtrl: FormControl;
   public seasons: string[];
   public isLoading: boolean = false;
   public chksValue: any = {};
+  public selectedValue: any;
+  public radioValue: any;
+  public slideChecked: boolean;
 
   constructor(
     private appService: AppService,

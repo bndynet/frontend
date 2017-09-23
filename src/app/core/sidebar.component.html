@@ -9,7 +9,6 @@
   <nav>
     <ul class="metismenu">
       <li *ngFor="let menu of menus" [ngClass]="{'active': menu.expanded}">
-        {{index}}
         <a [routerLink]="menu.url" routerLinkActive="active" [ngClass]="{'has-arrow': !!menu.children && menu.children.length > 0}">
           <i class="{{menu.icon}}" *ngIf="menu.icon"></i>
           <img src="assets/img/{{menu.icon.replace('img:', '')}}" *ngIf="menu.icon.indexOf('img:')===0">

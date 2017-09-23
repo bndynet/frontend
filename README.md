@@ -29,6 +29,9 @@ git clone https://github.com/bndynet/frontend.git
 # change directory
 cd frontend
 
+# install yarn
+npm install --global yarn
+
 # install all the dependencies of project
 yarn or yarn install
 
