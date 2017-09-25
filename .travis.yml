@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 dist: trusty
 language: node_js
 
@@ -14,6 +14,7 @@ addons:
       - google-chrome-stable
 
 node_js:
+  - "iojs"
   - "6"
   - "7"
   - "node"
@@ -22,7 +23,7 @@ matrix:
   fast_finish: true
 
 before_install:
-  - npm install npm@5 -g
+  - npm install npm@6 -g
   - npm cache verify
   - npm prune
   - npm update
