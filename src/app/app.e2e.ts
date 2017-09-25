@@ -13,22 +13,9 @@ describe('App', () => {
     expect(subject).toEqual(result);
   });
 
-  it('should have header', async () => {
-    const subject = await element(by.css('h1')).isPresent();
+  it('should have app tag', async () => {
+    const subject = await element(by.tagName('app')).isPresent();
     const result  = true;
     expect(subject).toEqual(result);
   });
-
-  it('should have <home>', async () => {
-    const subject = await element(by.css('app home')).isPresent();
-    const result  = true;
-    expect(subject).toEqual(result);
-  });
-
-  it('should have buttons', async () => {
-    const subject = await element(by.css('button')).getText();
-    const result  = 'Submit Value';
-    expect(subject).toEqual(result);
-  });
-
 });

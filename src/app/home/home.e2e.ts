@@ -15,11 +15,4 @@ describe('App', () => {
     const result  = 'Frontend';
     expect(subject).toEqual(result);
   });
-
-  it('should have `your content here` x-large', async () => {
-    const subject = await element(by.css('[x-large]')).getText();
-    const result  = 'Your Content Here';
-    expect(subject).toEqual(result);
-  });
-
 });
