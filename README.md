@@ -12,7 +12,7 @@
 	                               $$$$$$/                                    
 	
 
-# FRONTEND
+# FRONTEND [![Build Status](https://travis-ci.org/BndyNet/frontend.svg?branch=master)](https://travis-ci.org/BndyNet/frontend)
 
 An admin template project featuring Angular 4, Angular Material, TypeScript and Webpack 2.
 
