@@ -1,7 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {
-  inject,
   async,
   TestBed,
   ComponentFixture
@@ -23,9 +22,9 @@ describe(`App`, () => {
    */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppComponent ],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [HttpModule, AppModule, AppState]
+      providers: [AppState],
+      imports: [HttpModule, AppModule]
     })
     /**
      * Compile template and css
