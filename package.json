@@ -5,6 +5,8 @@
   "keywords": [
     "angular",
     "angular2",
+    "angular4",
+    "angular material",
     "webpack",
     "typescript"
   ],
@@ -182,7 +184,7 @@
     "url": "https://github.com/bndynet/frontend/issues"
   },
   "engines": {
-    "node": ">= 4.2.1",
+    "node": ">= 6.0.0",
     "npm": ">= 3"
   }
 }
