@@ -435,9 +435,10 @@ module.exports = function (options) {
         }
       }),
       new ProvidePlugin({
-        jQuery: 'jquery',
         $: 'jquery',
         jquery: 'jquery',
+        jQuery: 'jquery',
+        "window.jQuery": "jquery",
         _: 'lodash',
       }),
       // new ProgressBarPlugin({

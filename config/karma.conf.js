@@ -1,7 +1,3 @@
-/**
- * @author: @AngularClass
- */
-
 module.exports = function (config) {
   var testWebpackConfig = require('./webpack.test.js')({ env: 'test' });
 
@@ -34,6 +30,7 @@ module.exports = function (config) {
      * we are building the test environment in ./spec-bundle.js
      */
     files: [
+      './node_modules/jquery/dist/jquery.js',
       { pattern: './config/spec-bundle.js', watched: false },
       { pattern: './src/assets/**/*', watched: false, included: false, served: true, nocache: false }
     ],
