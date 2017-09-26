@@ -325,9 +325,9 @@ module.exports = function (options) {
        * See: https://github.com/numical/script-ext-html-webpack-plugin
        */
       new ScriptExtHtmlWebpackPlugin({
-        sync: /polyfill|vendor/,
+        sync: /polyfills|vendor/,
         defaultAttribute: 'async',
-        preload: [/polyfill|vendor|main/],
+        preload: [/polyfills|vendor|main/],
         prefetch: [/chunk/]
       }),
 
@@ -342,7 +342,10 @@ module.exports = function (options) {
       new HtmlWebpackPlugin({
         template: 'src/index.html',
         title: METADATA.title,
-        chunksSortMode: 'dependency',
+        chunksSortMode: function (a, b) {
+          const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
+          return entryPoints.indexOf(a.names[0]) - entryPoints.indexOf(b.names[0]);
+        },
         metadata: METADATA,
         inject: 'body'
       }),
