@@ -20,11 +20,15 @@ export class AppService {
     private http: Http,
     private snackBar: MdSnackBar,
   ) {
-    this.config = new AppConfig(Environment.prod).currentConfig;
+    this.config = new AppConfig().currentConfig;
   }
 
   public setLoading(value: boolean): void {
     this.loadEvent.emit(value);
+  }
+
+  public search(keywords: string): void {
+    this.info(`TODO: search "${keywords}"`);
   }
 
   public getMainMenus(): Promise<any[]> {

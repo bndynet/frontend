@@ -53,6 +53,10 @@ nav {
       background-clip: padding-box;
       padding: 0;
 
+      &.no-border {
+        border: none;
+      }
+
       a {
         padding: 8px 16px;
       }

@@ -1,18 +1,16 @@
 @import "../../styles/variables";
 
-.navbar-form {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0 0 0 $sidebar-width;
-  width: 100%;
+.search-form {
+  padding: 1.5rem 2rem;
+  margin: 0;
+  background-color: $primary-color;
+  width: 460px;
 
-  .form-group {
+  .input-group {
     width: 100%;
 
-    .form-control {
-      border-radius: 0;
-      width: 100%;
+    .input-group-btn {
+      width: 1%;
     }
   }
 }

@@ -12,7 +12,7 @@
 	                               $$$$$$/                                    
 	
 
-# FRONTEND [![Build Status](https://travis-ci.org/BndyNet/frontend.svg?branch=master)](https://travis-ci.org/BndyNet/frontend)
+# FRONTEND [![Build Status](https://travis-ci.org/bndynet/frontend.svg?branch=master)](https://travis-ci.org/BndyNet/frontend)
 
 An admin template project featuring Angular 4, Angular Material, TypeScript and Webpack 2.
 
@@ -20,7 +20,6 @@ An admin template project featuring Angular 4, Angular Material, TypeScript and 
 
 ### Quick start
 **Make sure you have Node version >= 6.0 and NPM >= 3**
-> Clone/Download the repo
 
 ```bash
 # clone repo

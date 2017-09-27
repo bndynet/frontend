@@ -9,9 +9,12 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <a>
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button">
           <i class="fa fa-search"></i>
         </a>
+        <div class="dropdown-menu no-border animated fadeInDown">
+          <app-navsearch></app-navsearch>
+        </div>
       </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

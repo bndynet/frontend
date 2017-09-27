@@ -1,8 +1,10 @@
-<form class="navbar-form" novalidate="" role="search">
-  <div class="form-group has-feedback">
-    <input class="form-control ng-pristine ng-valid ng-touched" name="term" type="text"
-           placeholder="Type and hit enter..">
-    <div class="fa fa-times form-control-feedback"></div>
+<div class="search-form">
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="keywords" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" (click)="onSearch($event)">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
   </div>
-  <button class="hidden btn btn-default" type="submit">Submit</button>
-</form>
+</div>

@@ -13,7 +13,7 @@
 #    docker run --name my-frontend -p 8080:80 frontend &
 #
 #    Run image as virtual host (read more: https://github.com/jwilder/nginx-proxy):
-#    docker run -e VIRTUAL_HOST=angular-starter.your-domain.com --name my-frontend fontend &
+#    docker run -e VIRTUAL_HOST=frontend.your-domain.com --name my-frontend fontend &
 
 FROM nginx:1.13.0-alpine
 
