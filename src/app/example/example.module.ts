@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MdListModule,
   MdTableModule,
+  MdPaginatorModule,
   MdGridListModule,
   MdDatepickerModule,
   MdNativeDateModule,
@@ -40,6 +41,7 @@ const exampleRoutes: Routes = [
     MdDatepickerModule,
     MdNativeDateModule,
     MdTableModule,
+    MdPaginatorModule,
     CdkTableModule,
 
     RouterModule.forChild(exampleRoutes),

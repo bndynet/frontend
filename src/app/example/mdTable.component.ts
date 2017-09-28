@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { MdPaginator } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
@@ -21,6 +22,7 @@ export class ExampleMdTableComponent implements OnInit {
     public exampleDatabase = new ExampleDatabase(this.appService);
     public dataSource: ExampleDataSource | null;
 
+    @ViewChild(MdPaginator) private paginator: MdPaginator;
     @ViewChild('filter') private filter: ElementRef;
 
     constructor(
@@ -29,7 +31,7 @@ export class ExampleMdTableComponent implements OnInit {
     }
 
     public ngOnInit() {
-        this.dataSource = new ExampleDataSource(this.exampleDatabase);
+        this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator);
         Observable.fromEvent(this.filter.nativeElement, 'keyup')
             .debounceTime(150)
             .distinctUntilChanged()
