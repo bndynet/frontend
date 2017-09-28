@@ -142,11 +142,18 @@ snack-bar-container.mat-snack-bar-container {
 
 .page-body {
   padding: 20px 50px;
-  height: calc(100% - #{$page-header-height});
-  overflow: auto;
 
   &.full {
     padding: 0;
+
+    ng2-smart-table-pager {
+      margin: 0 1rem;
+    }
+  }
+
+  & > .full {
+    margin-left: -20px;
+    margin-right: -20px;
   }
 }
 

@@ -1,27 +1,13 @@
 @import "../styles/variables";
+
 app {
   display: block;
   height: 100%;
-  .btn-menu-toggle {
-    position: absolute;
-    z-index: 9999;
-    display: block;
-    padding: 0 1rem;
-    height: $header-height;
-    line-height: $header-height;
-    color: #ffffff;
-    text-align: center;
-    &:hover {
-      background-color: darken($brand-color, 10%);
-    }
-  }
+
   main {
     background-color: white;
-    padding-top: $header-height;
-    height: 100%;
 
     .page-main {
-      height: 100%;
       overflow: auto;
     }
   }
@@ -51,13 +37,34 @@ app {
       background-color: $brand-color;
     }
   }
+
   .mat-sidenav-container {
-    width: 100%;
-    height: 100%;
-    background-color: $brand-color;
-    md-sidenav {
+    height: calc(100vh - #{$header-height});
+
+    .mat-sidenav {
       width: $sidebar-width;
       background-color: $sidebar-color;
+      border-right: solid 1px $gray-lighter;
+    }
+  }
+
+  .btn-toggle-sidebar {
+    position: absolute;
+    z-index: 9999;
+    bottom: 0.5rem;
+    left: calc(#{$sidebar-width} - 20px);
+    transition: left .3s;
+
+    i {
+      font-size: 2rem;
+      position: relative;
+      top: -3px;
+    }
+  }
+
+  .sidebar-collapsed {
+    .btn-toggle-sidebar {
+      left: 1rem;
     }
   }
 }

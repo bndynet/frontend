@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
   public name = 'Frontend';
   public url = 'http://bndy.net';
   public isLoading: boolean = true;
+  public isSidebarCollapsed: boolean = false;
 
   constructor(
     private router: Router,

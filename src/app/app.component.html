@@ -1,17 +1,23 @@
 <md-progress-bar mode="indeterminate" *ngIf="isLoading"></md-progress-bar>
 
-<md-sidenav-container>
-  <md-sidenav #sidenav mode="side" opened="true">
-    <app-sidebar></app-sidebar>
-  </md-sidenav>
-  <a class="btn-menu-toggle" (click)="sidenav.toggle()">
-          <i class="fa fa-navicon"></i>
-      </a>
-  <main>
-    <app-header></app-header>
-    <div class="page-main">
-      <router-outlet></router-outlet>
-    </div>
-  </main>
-  <footer></footer>
-</md-sidenav-container>
+<app-header></app-header>
+
+<div [ngClass]="{'sidebar-collapsed': isSidebarCollapsed}">
+  <md-sidenav-container>
+    <md-sidenav #sidenav mode="side" opened="true">
+      <app-sidebar></app-sidebar>
+    </md-sidenav>
+
+    <main>
+      <div class="page-main">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+    <footer></footer>
+  </md-sidenav-container>
+
+  <button md-mini-fab class="btn-toggle-sidebar" (click)="sidenav.toggle();isSidebarCollapsed=!isSidebarCollapsed;">
+    <i class="fa fa-angle-right" *ngIf="isSidebarCollapsed"></i>
+    <i class="fa fa-angle-left" *ngIf="!isSidebarCollapsed"></i>
+  </button>
+</div>
