@@ -29,13 +29,13 @@ export class ExampleTableComponent implements OnInit {
         },
         content: {
           title: 'Content',
-          width: '50%',
+          width: '45%',
           type: 'custom',
           renderComponent: ExampleTableCustomRenderColumnComponent,
         },
         createdAt: {
           title: 'Created At',
-          width: '120px',
+          width: '160px',
           editable: false,
         },
       });

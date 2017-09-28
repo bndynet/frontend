@@ -14,16 +14,19 @@ $gray-light: lighten($gray-base, 46.7%);
 $gray-lighter: lighten($gray-base, 93.5%);
 $gray-white: lighten($gray-base, 96%);
 
+/**************************************/
+
 $text-color: #333333;
 
 $sidebar-color: #ffffff;
 $sidebar-color-active: $primary-color;
 $sidebar-text-color: $text-color;
-
+$loading-bar-color: $info-color;
 
 $header-height: 52px;
 $sidebar-width: 220px;
-$font-size: 13px;
+$font-size: 14px;
 
 $page-header-height: 94px;
+
 

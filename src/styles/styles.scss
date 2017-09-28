@@ -28,37 +28,21 @@ label {
 }
 
 /* Material */
+.mat-form-field {
+  width: 100%;
+}
+
+/* for fixing the material issue */
 .mat-select {
+  position: relative;
+  top: -4px;
+
   .mat-select-trigger {
     font-size: $font-size;
-    height: 33px;
-
-    .mat-select-value {
-
-      .mat-select-value-text {
-        margin-top: 8px;
-      }
-    }
-
-    .mat-select-arrow {
-      position: absolute;
-      right: 0;
-      bottom: 8px;
-    }
-
-    .mat-select-placeholder {
-      margin-top: 8px;
-    }
+    height: 27px;
 
     .mat-select-placeholder.mat-floating-placeholder {
-      position: absolute;
-      margin-top: 20px;
-    }
-  }
-
-  &:focus {
-    .mat-select-underline {
-      height: 2px;
+      margin-top: 6px;
     }
   }
 }
@@ -98,16 +82,13 @@ label {
   line-height: 36px;
 }
 
+.mat-checkbox {
+  margin-right: 1rem;
+}
+
 .mat-radio-group {
   .mat-radio-button {
     margin-right: 10px;
-
-    .mat-radio-label {
-      .mat-radio-label-content {
-        position: relative;
-        top: -3px;
-      }
-    }
   }
 }
 
@@ -211,6 +192,12 @@ ng2-smart-table {
 
   ng2-smart-table-pager {
     text-align: right;
+
+    .ng2-smart-page-item {
+      a {
+        min-height: 31px;
+      }
+    }
   }
 
   .ng2-smart-actions {
