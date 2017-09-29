@@ -6,11 +6,13 @@ app {
 
   main {
     background-color: white;
+    height: 100%;
+    overflow: auto;
 
     .page-main {
-      overflow: auto;
     }
   }
+
   nav {
     .mat-button,
     .mat-icon-button,
@@ -22,6 +24,7 @@ app {
       }
     }
   }
+
   .mat-progress-bar {
     position: absolute;
     top: 0;
@@ -56,9 +59,11 @@ app {
     transition: left .3s;
 
     i {
-      font-size: 2rem;
-      position: relative;
-      top: -3px;
+      &.fa-angle-left {
+        font-size: 2rem;
+        position: relative;
+        top: -3px;
+      }
     }
   }
 

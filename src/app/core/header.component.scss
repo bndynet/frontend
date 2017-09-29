@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.navbar {
+:host /deep/ .navbar {
   color: #ffffff;
   background-color: $brand-color;
   height: $header-height;
@@ -31,6 +31,13 @@
             right: 0;
             padding: 2px 5px;
           }
+        }
+
+        img {
+          height: 24px;
+          position: relative;
+          top: -2px;
+          vertical-align: top;
         }
       }
     }
@@ -95,11 +102,8 @@
     min-width: 50px;
 
     img {
-      position: absolute;
-      margin-top: -5px;
-      height: 26px;
+      margin-top: -2px;
       background-color: #ffffff;
-      border-radius: 50%;
     }
 
   }

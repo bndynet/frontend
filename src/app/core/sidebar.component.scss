@@ -1,6 +1,7 @@
 @import "../../styles/variables";
 
-.sidebar {
+
+:host /deep/ .sidebar {
 
   ul {
     padding: 0;
