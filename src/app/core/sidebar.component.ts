@@ -20,13 +20,11 @@ export class AppSidebarComponent implements AfterViewInit, OnInit {
   public ngAfterViewInit() {
     setTimeout(() => {
       $('.metismenu').metisMenu();
-    });
+    }, 1000);
   }
 
   public ngOnInit() {
-    this.appService.getSideMenus().then((menus: any) => {
-      this.menus = menus;
-    });
+    this.menus = this.appService.getSideMenus();
   }
 
   public toggleMenu(menu: any): void {

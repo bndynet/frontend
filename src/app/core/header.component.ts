@@ -17,8 +17,6 @@ export class AppHeaderComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.appService.getMainMenus().then((menus: any) => {
-      this.menus = menus;
-    });
+    this.menus = this.appService.getMainMenus();
   }
 }
