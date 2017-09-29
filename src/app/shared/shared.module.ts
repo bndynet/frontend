@@ -28,7 +28,7 @@ import { DefinitionService } from './definition.service';
 import { AppDatePipe } from './pipes/appDate';
 
 // shared components
-import { SharedMenuItem } from './menuItem.component';
+import { SharedMenuItemComponent } from './menuItem.component';
 import { SharedPageHeaderComponent } from './pageHeader.component';
 import { DialogAlertComponent } from './dialogAlert.component';
 import { DialogConfirmComponent } from './dialogConfirm.component';
@@ -59,7 +59,7 @@ import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
   declarations: [
     AppDatePipe,
 
-    SharedMenuItem,
+    SharedMenuItemComponent,
     SharedPageHeaderComponent,
     DialogAlertComponent,
     DialogConfirmComponent,
@@ -88,7 +88,7 @@ import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
 
     AppDatePipe,
 
-    SharedMenuItem,
+    SharedMenuItemComponent,
     SharedPageHeaderComponent,
   ],
   entryComponents: [

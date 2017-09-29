@@ -7,7 +7,7 @@ export const mainMenus = [
 export const sideMenus = [
   {icon: 'fa fa-dashboard', text: 'Dashboard', url: './dashboard'},
   {
-    icon: '', text: 'Example', url: '', 'expanded': true, 'children': [
+    icon: '', text: 'Example', url: '', expanded: true, children: [
       {icon: 'fa fa-id-card-o', text: 'Form', url: './example-form'},
       {icon: 'fa fa-list', text: 'List', url: './example-list'},
       {icon: 'fa fa-th-large', text: 'Grid', url: './example-grid'},

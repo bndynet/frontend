@@ -25,7 +25,7 @@ import { Component, Input } from '@angular/core';
   `,
 })
 
-export class SharedMenuItem {
+export class SharedMenuItemComponent {
   @Input()
   public menuItemData: any;
 }
