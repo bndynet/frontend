@@ -24,7 +24,11 @@ import {
 // services
 import { DefinitionService } from './definition.service';
 
+// pipes
+import { AppDatePipe } from './pipes/appDate';
+
 // shared components
+import { SharedMenuItem } from './menuItem.component';
 import { SharedPageHeaderComponent } from './pageHeader.component';
 import { DialogAlertComponent } from './dialogAlert.component';
 import { DialogConfirmComponent } from './dialogConfirm.component';
@@ -34,6 +38,7 @@ import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
   imports: [
     CommonModule,
     HttpModule,
+    RouterModule,
 
     MdButtonModule,
     MdSelectModule,
@@ -52,6 +57,9 @@ import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
     MdTabsModule,
   ],
   declarations: [
+    AppDatePipe,
+
+    SharedMenuItem,
     SharedPageHeaderComponent,
     DialogAlertComponent,
     DialogConfirmComponent,
@@ -78,6 +86,9 @@ import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
     MdSlideToggleModule,
     MdTabsModule,
 
+    AppDatePipe,
+
+    SharedMenuItem,
     SharedPageHeaderComponent,
   ],
   entryComponents: [

@@ -17,7 +17,7 @@
 
   <ng-container cdkColumnDef="createdAt">
     <md-header-cell *cdkHeaderCellDef> Created At </md-header-cell>
-    <md-cell *cdkCellDef="let row"> {{row.createdAt}} </md-cell>
+    <md-cell *cdkCellDef="let row"> {{row.createdAt | appDate: 'full'}} </md-cell>
   </ng-container>
 
   <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
@@ -27,6 +27,6 @@
 <md-paginator #paginator
               [length]="exampleDatabase.data.length"
               [pageIndex]="0"
-              [pageSize]="25"
+              [pageSize]="10"
               [pageSizeOptions]="[5, 10, 25, 100]">
 </md-paginator>
