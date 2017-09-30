@@ -6,7 +6,7 @@ $danger-color: #e00000;
 
 $brand-color: $primary-color;
 
-$gray-base: #000;
+$gray-base: #666666;
 $gray-darker: lighten($gray-base, 13.5%);
 $gray-dark: lighten($gray-base, 20%);
 $gray: lighten($gray-base, 33.5%);
@@ -16,14 +16,16 @@ $gray-white: lighten($gray-base, 96%);
 
 /**************************************/
 
-$text-color: #333333;
+$text-color: #666666;
 
-$sidebar-color: #ffffff;
-$sidebar-color-active: $primary-color;
-$sidebar-text-color: $text-color;
+$sidebar-color: $text-color;
+$sidebar-background-color: $gray-white;
+$sidebar-active-color: $primary-color;
+$sidebar-active-background-color: $gray-lighter;
+
 $loading-bar-color: $info-color;
 
 $header-height: 52px;
 $sidebar-width: 220px;
-$font-size: 14px;
+$font-size: 13px;
 

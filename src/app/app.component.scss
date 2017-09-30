@@ -8,9 +8,6 @@ app {
     background-color: white;
     height: 100%;
     overflow: auto;
-
-    .page-main {
-    }
   }
 
   nav {
@@ -46,8 +43,8 @@ app {
 
     .mat-sidenav {
       width: $sidebar-width;
-      background-color: $sidebar-color;
-      border-right: solid 1px $gray-lighter;
+      background-color: $sidebar-background-color;
+      border-right: solid 1px $gray-light;
     }
   }
 
@@ -69,7 +66,7 @@ app {
 
   .sidebar-collapsed {
     .btn-toggle-sidebar {
-      left: 1rem;
+      left: .5rem;
     }
   }
 }

@@ -3,36 +3,97 @@
 
 :host /deep/ .sidebar {
 
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    height: 78px;
+
+    .user-img {
+      flex: 1;
+      padding: 0 1rem 0 1.5rem;
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+      }
+
+      i {
+        font-size: 4rem;
+        color: $primary-color;
+      }
+    }
+
+    .title {
+      flex: 2;
+
+      h4 {
+        font-size: 1.15rem;
+
+        span {
+          display: block;
+          margin-bottom: .5rem;
+        }
+
+        small {
+          display: block;
+          margin-bottom: .5rem;
+        }
+
+        .status-bar {
+          i {
+            color: $gray-light;
+            margin-right: .2rem;
+
+            &.text-success {
+              color: $success-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
   ul {
     padding: 0;
     margin: 0;
     list-style: none;
-  }
 
-  nav {
-    .metismenu {
-      a {
-        display: block;
-        padding: .75rem 2rem;
-        transition: all .1s ease-out;
-        text-decoration: none;
-        color: $sidebar-text-color;
-        i {
-          margin-right: 5px;
-        }
-        &[aria-expanded=true] {
-          &.has-arrow {
-            &:after {
-              top: 45%;
-            }
+    a {
+      display: block;
+      padding: .75rem 2rem;
+      transition: all .1s ease-out;
+      text-decoration: none;
+      color: $sidebar-color;
+      background-color: $sidebar-background-color;
+
+      i {
+        margin-right: 5px;
+      }
+
+      &[aria-expanded=true] {
+        &.has-arrow {
+          &:after {
+            top: 45%;
           }
         }
-        &:hover,
-        &:focus,
-        &:active,
-        &.active {
-          color: $sidebar-color-active;
-          background-color: darken($sidebar-color, 5%);
+      }
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        color: $sidebar-active-color;
+        background-color: $sidebar-active-background-color;
+      }
+    }
+
+    & > li {
+      & > a {
+        background-color: darken($sidebar-background-color, 2%);
+
+        & + ul {
+          a {
+            background-color: $sidebar-background-color;
+          }
         }
       }
     }

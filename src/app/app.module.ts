@@ -34,10 +34,10 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppService, AppState, InternalStateType } from './app.service';
 
 import '../styles/styles.scss';
-import '../styles/headings.css';
 
 // Application Modules
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { ExampleModule } from './example/example.module';
@@ -73,6 +73,7 @@ interface StoreType {
     MdSidenavModule,
     MdSnackBarModule,
 
+    SharedModule,
     CoreModule,
     HomeModule,
     AuthModule,

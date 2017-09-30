@@ -98,6 +98,7 @@ import { DialogConfirmDeleteComponent } from './dialogConfirmDelete.component';
   ],
   providers: [
     DefinitionService,
+    AppDatePipe,
   ],
 })
 export class SharedModule {}

@@ -22,6 +22,12 @@ import { Component, Input } from '@angular/core';
       <img src="{{menuItemData.icon}}" *ngIf="menuItemData.icon && menuItemData.hasImage" />
       <span *ngIf="menuItemData.text">{{menuItemData.text}}</span>
     </a>
+
+    <ul *ngIf="!!menuItemData.children && menuItemData.children.length > 0 && !menuItemData.isCollapsed">
+      <li *ngFor="let child of menuItemData.children"
+          shared-menu-item [menuItemData]="child">
+      </li>
+    </ul>
   `,
 })
 
