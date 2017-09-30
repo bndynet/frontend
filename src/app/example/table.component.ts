@@ -4,6 +4,8 @@ import { MdDialog } from '@angular/material';
 import { AppService } from '../app.service';
 import { DefinitionService } from '../shared/definition.service';
 
+import { AppDatePipe } from '../shared/pipes/appDate';
+
 import { DialogAlertComponent } from '../shared/dialogAlert.component';
 import { DialogConfirmDeleteComponent } from '../shared/dialogConfirmDelete.component';
 import { ExampleTableCustomRenderColumnComponent } from './tableCustomRenderColumn.component';
@@ -20,6 +22,7 @@ export class ExampleTableComponent implements OnInit {
   constructor(
     private dialog: MdDialog,
     private appService: AppService,
+    private appDate: AppDatePipe,
     private definitionService: DefinitionService,
   ) {
     this.settings = definitionService.getSmartTableSettings({
@@ -37,6 +40,7 @@ export class ExampleTableComponent implements OnInit {
           title: 'Created At',
           width: '160px',
           editable: false,
+          valuePrepareFunction: (val: any) => { return this.appDate.transform(val); },
         },
       });
   }

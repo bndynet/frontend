@@ -6,7 +6,7 @@ import * as moment from 'moment';
   name: 'appDate',
 })
 export class AppDatePipe implements PipeTransform {
-  public transform(val: any, mode: string): any {
+  public transform(val: any, mode?: string): any {
     if (mode === 'short') {
       return moment(val).format('YYYY-MM-DD');
     } else if (mode === 'full') {
