@@ -22,8 +22,9 @@ const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const ngcWebpack = require('ngc-webpack');
 //const PreloadWebpackPlugin = require('preload-webpack-plugin');
-var WebpackAutoInject = require('webpack-auto-inject-version');
-var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const WebpackAutoInject = require('webpack-auto-inject-version');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
 
 /**
  * Webpack Constants
@@ -448,6 +449,9 @@ module.exports = function (options) {
       //   format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds) on ' + moment().format('MMMM Do YYYY, h:mm a') + ' ',
       //   clear: false
       // }),
+      new SimpleProgressWebpackPlugin({
+        format: 'minimal', // minimal, compact, expanded, verbose
+      }),
     ],
 
     /**
@@ -464,6 +468,5 @@ module.exports = function (options) {
       clearImmediate: false,
       setImmediate: false
     }
-
   };
 }
