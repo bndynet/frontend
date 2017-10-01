@@ -7,7 +7,30 @@ app {
   main {
     background-color: white;
     height: 100%;
-    overflow: auto;
+
+    .page-header {
+      margin: 0;
+      padding: 15px 30px;
+      background-color: #fafbfc;
+      border-bottom: solid 1px #cfdbe2;
+      height: $page-header-height;
+    }
+
+    .page-body {
+      height: calc(100vh - #{$header-height} - #{$page-header-height});
+      padding: 30px;
+      overflow: auto;
+
+      .fill-page-body {
+        margin: -30px;
+      }
+
+      .page-actions {
+        position: fixed;
+        right: 2rem;
+        margin-top: -58px;
+      }
+    }
   }
 
   nav {

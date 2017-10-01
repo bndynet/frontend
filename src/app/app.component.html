@@ -9,7 +9,12 @@
     </md-sidenav>
 
     <main>
-      <router-outlet></router-outlet>
+      <div class="page-header">
+        <shared-page-header title="Page Title" subtitle="sub title"></shared-page-header>
+      </div>
+      <div class="page-body">
+        <router-outlet></router-outlet>
+      </div>
     </main>
     <footer></footer>
   </md-sidenav-container>

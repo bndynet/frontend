@@ -1,16 +1,8 @@
 @import "../../styles/variables";
 
-.page-header {
-  overflow: hidden;
-  padding: 15px 30px;
-  margin: 0;
-  background-color: #fafbfc;
-  border-bottom: solid 1px #cfdbe2;
-
-  h1 {
-    color: #929292;
-    margin: 4px 0;
-    font-weight: 200;
-    text-transform: uppercase;
-  }
+h1 {
+  color: #929292;
+  margin: 4px 0;
+  font-weight: 200;
+  text-transform: uppercase;
 }

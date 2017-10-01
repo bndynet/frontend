@@ -12,6 +12,7 @@ export class ExampleListComponent implements OnInit {
   constructor(
     private appService: AppService,
   ) {
+    this.appService.setPageTitle('List');
   }
 
   public ngOnInit() {

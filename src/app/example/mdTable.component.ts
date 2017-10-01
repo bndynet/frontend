@@ -13,31 +13,32 @@ import { ExampleDatabase } from './Database';
 import { ExampleDataSource } from './DataSource';
 
 @Component({
-    selector: 'example-md-table',
-    styleUrls: ['./mdTable.component.scss'],
-    templateUrl: './mdTable.component.html',
+  selector: 'example-md-table',
+  styleUrls: ['./mdTable.component.scss'],
+  templateUrl: './mdTable.component.html',
 })
 export class ExampleMdTableComponent implements OnInit {
-    public displayedColumns = ['title', 'content', 'createdAt'];
-    public exampleDatabase = new ExampleDatabase(this.appService);
-    public dataSource: ExampleDataSource | null;
+  public displayedColumns = ['title', 'content', 'createdAt'];
+  public exampleDatabase = new ExampleDatabase(this.appService);
+  public dataSource: ExampleDataSource | null;
 
-    @ViewChild(MdPaginator) private paginator: MdPaginator;
-    @ViewChild('filter') private filter: ElementRef;
+  @ViewChild(MdPaginator) private paginator: MdPaginator;
+  @ViewChild('filter') private filter: ElementRef;
 
-    constructor(
-        private appService: AppService,
-    ) {
-    }
+  constructor(private appService: AppService,) {
+    this.appService.setPageTitle('Table', 'Material Table');
+  }
 
-    public ngOnInit() {
-        this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator);
-        Observable.fromEvent(this.filter.nativeElement, 'keyup')
-            .debounceTime(150)
-            .distinctUntilChanged()
-            .subscribe(() => {
-                if (!this.dataSource) { return; }
-                this.dataSource.filter = this.filter.nativeElement.value;
-            });
-    }
+  public ngOnInit() {
+    this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator);
+    Observable.fromEvent(this.filter.nativeElement, 'keyup')
+      .debounceTime(150)
+      .distinctUntilChanged()
+      .subscribe(() => {
+        if (!this.dataSource) {
+          return;
+        }
+        this.dataSource.filter = this.filter.nativeElement.value;
+      });
+  }
 }

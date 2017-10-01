@@ -1,32 +1,32 @@
-<shared-page-header title="Table" subtitle="Material Table"></shared-page-header>
+<div class="fill-page-body">
+  <md-input-container floatPlaceholder="never" md-block>
+    <input mdInput #filter placeholder="Filter">
+  </md-input-container>
 
-<md-input-container floatPlaceholder="never" md-block>
-  <input mdInput #filter placeholder="Filter">
-</md-input-container>
+  <md-table #table [dataSource]="dataSource">
+    <ng-container cdkColumnDef="title">
+      <md-header-cell *cdkHeaderCellDef> Title</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.title}}</md-cell>
+    </ng-container>
 
-<md-table #table [dataSource]="dataSource">
-  <ng-container cdkColumnDef="title">
-    <md-header-cell *cdkHeaderCellDef> Title </md-header-cell>
-    <md-cell *cdkCellDef="let row"> {{row.title}} </md-cell>
-  </ng-container>
+    <ng-container cdkColumnDef="content">
+      <md-header-cell *cdkHeaderCellDef> Content</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.content}}%</md-cell>
+    </ng-container>
 
-  <ng-container cdkColumnDef="content">
-    <md-header-cell *cdkHeaderCellDef> Content </md-header-cell>
-    <md-cell *cdkCellDef="let row"> {{row.content}}% </md-cell>
-  </ng-container>
+    <ng-container cdkColumnDef="createdAt">
+      <md-header-cell *cdkHeaderCellDef> Created At</md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.createdAt | appDate: 'full'}}</md-cell>
+    </ng-container>
 
-  <ng-container cdkColumnDef="createdAt">
-    <md-header-cell *cdkHeaderCellDef> Created At </md-header-cell>
-    <md-cell *cdkCellDef="let row"> {{row.createdAt | appDate: 'full'}} </md-cell>
-  </ng-container>
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
 
-  <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
-  <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
-</md-table>
-
-<md-paginator #paginator
-              [length]="exampleDatabase.data.length"
-              [pageIndex]="0"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]">
-</md-paginator>
+  <md-paginator #paginator
+                [length]="exampleDatabase.data.length"
+                [pageIndex]="0"
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 25, 100]">
+  </md-paginator>
+</div>

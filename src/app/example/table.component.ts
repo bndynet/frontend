@@ -19,30 +19,31 @@ export class ExampleTableComponent implements OnInit {
   public settings: any;
   public data: any[];
 
-  constructor(
-    private dialog: MdDialog,
-    private appService: AppService,
-    private appDate: AppDatePipe,
-    private definitionService: DefinitionService,
-  ) {
+  constructor(private dialog: MdDialog,
+              private appService: AppService,
+              private appDate: AppDatePipe,
+              private definitionService: DefinitionService,) {
+    this.appService.setPageTitle('Table', 'ng2-smart-table');
     this.settings = definitionService.getSmartTableSettings({
-        title: {
-          title: 'Title',
-          width: '30%',
+      title: {
+        title: 'Title',
+        width: '30%',
+      },
+      content: {
+        title: 'Content',
+        width: '45%',
+        type: 'custom',
+        renderComponent: ExampleTableCustomRenderColumnComponent,
+      },
+      createdAt: {
+        title: 'Created At',
+        width: '160px',
+        editable: false,
+        valuePrepareFunction: (val: any) => {
+          return this.appDate.transform(val);
         },
-        content: {
-          title: 'Content',
-          width: '45%',
-          type: 'custom',
-          renderComponent: ExampleTableCustomRenderColumnComponent,
-        },
-        createdAt: {
-          title: 'Created At',
-          width: '160px',
-          editable: false,
-          valuePrepareFunction: (val: any) => { return this.appDate.transform(val); },
-        },
-      });
+      },
+    });
   }
 
   public ngOnInit() {
@@ -69,8 +70,8 @@ export class ExampleTableComponent implements OnInit {
           data: {
             title: 'Deletion Result',
             content: 'Deleted Successfully',
-            btn: 'OK, got it.'
-          }
+            btn: 'OK, got it.',
+          },
         });
         dialogAlertRef.afterClosed().subscribe(() => {
           console.info(`Alert Dialog Closed`);

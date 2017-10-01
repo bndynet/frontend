@@ -52,6 +52,12 @@ label {
   }
 }
 
+.mat-fab {
+  i.fa {
+    font-size: 1.5rem;
+  }
+}
+
 .mat-option {
   font-size: $font-size;
 }
@@ -150,23 +156,6 @@ snack-bar-container.mat-snack-bar-container {
   }
 }
 
-.page-body {
-  padding: 20px 50px;
-
-  &.full {
-    padding: 0;
-
-    ng2-smart-table-pager {
-      margin: 0 1rem;
-    }
-  }
-
-  & > .full {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-}
-
 .left {
   float: left;
 }
@@ -199,7 +188,7 @@ ng2-smart-table {
     }
 
     tr {
-      border-bottom: solid 1px $gray-lighter;
+      border-bottom: solid 1px $gray-light;
     }
 
     input.form-control {
@@ -208,6 +197,7 @@ ng2-smart-table {
   }
 
   ng2-smart-table-pager {
+    margin: 0 1rem;
     text-align: right;
 
     .ng2-smart-page-item {

@@ -12,6 +12,7 @@ export class ExampleGridComponent implements OnInit {
   constructor(
     private appService: AppService,
   ) {
+    this.appService.setPageTitle('Grid');
   }
 
   public ngOnInit() {

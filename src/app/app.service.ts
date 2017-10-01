@@ -16,6 +16,7 @@ export class AppService {
 
   public config: IAppConfigInfo;
   @Output() public loadEvent: EventEmitter<boolean> = new EventEmitter(true);
+  @Output() public pageTitleChangeEvent: EventEmitter<object> = new EventEmitter();
 
   constructor(
     private http: Http,
@@ -26,6 +27,12 @@ export class AppService {
 
   public setLoading(value: boolean): void {
     this.loadEvent.emit(value);
+  }
+
+  public setPageTitle(title: string, subtitle?: string) {
+    this.pageTitleChangeEvent.emit({
+      title, subtitle,
+    });
   }
 
   public search(keywords: string): void {
@@ -57,7 +64,7 @@ export class AppService {
       for (let i = 0; i < 122; i++) {
         articles.push({
           id: i,
-          title: `About repository languages`,
+          title: `${i}. About repository languages`,
           content: `The files and directories within a repository determine the languages that make up the repository.
            You can view a repository's languages to get a quick overview of the repository.
            GitHub uses the open source Linguist library to determine file languages for syntax highlighting and repository statistics.

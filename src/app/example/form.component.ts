@@ -30,6 +30,8 @@ export class ExampleFormComponent {
   constructor(
     private appService: AppService,
   ) {
+    this.appService.setPageTitle('Form', 'input, datepicker, autocomplete');
+
     this.formCtrl = new FormControl();
     this.seasons = [
       'Winter',

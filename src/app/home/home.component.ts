@@ -1,6 +1,7 @@
 import {
   Component,
 } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'home',
@@ -8,5 +9,10 @@ import {
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  public localState = { value: '' };
+
+  constructor(
+    private appService: AppService) {
+
+    this.appService.setPageTitle('Home');
+  }
 }

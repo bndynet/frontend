@@ -1,4 +1,12 @@
-<shared-page-header [title]="'Form'" [subtitle]="'input, datepicker, autocomplete'"></shared-page-header>
+<div class="page-actions">
+  <button md-fab class="mat-primary" (click)="submitForm()">
+    <i class="fa fa-save"></i>
+  </button>
+  <button md-fab>
+    <i class="fa fa-undo"></i>
+  </button>
+</div>
+
 <form>
   <div class="row">
     <div class="col-xs-12">
@@ -85,13 +93,6 @@
         [checked]="slideChecked">
         Slide me!
       </md-slide-toggle>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <button md-raised-button class="mat-primary" (click)="submitForm()">Submit</button>
-      <button md-raised-button>Reset</button>
     </div>
   </div>
 </form>

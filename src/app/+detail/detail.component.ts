@@ -13,15 +13,13 @@ console.log('`Detail` component loaded asynchronously');
 @Component({
   selector: 'detail',
   template: `
-    <div class="page-body">
-      <h1>Parent</h1>
-      <span>
-        <a [routerLink]=" ['./child-detail'] ">
-          Child
-        </a>
-      </span>
-      <router-outlet></router-outlet>
-    </div>
+    <h1>Parent</h1>
+    <span>
+      <a [routerLink]=" ['./child-detail'] ">
+        Child
+      </a>
+    </span>
+    <router-outlet></router-outlet>
   `,
 })
 export class DetailComponent implements OnInit {

@@ -13,9 +13,7 @@ console.log('`ChildDetail` component loaded asynchronously');
 @Component({
   selector: 'child-detail',
   template: `
-    <div class="page-body">
-       Hello from Child
-    </div>
+     Hello from Child
   `,
 })
 export class ChildDetailComponent implements OnInit {

@@ -1,29 +1,25 @@
-<shared-page-header title="Dashboard" subtitle=""></shared-page-header>
-
-<div class="page-body">
-  <div class="row">
-    <div class="col-md-3 col-xs-6" *ngFor="let i of [1,2,3,4]">
-      <md-card>
-        <md-card-header>
-          <md-card-title>Visits</md-card-title>
-          <md-card-subtitle>Trend</md-card-subtitle>
-          <div md-card-avatar>
-            <i class="fa fa-pie-chart"></i>
-          </div>
-        </md-card-header>
-        <md-card-content>
-          <md-card-title>21,212</md-card-title>
-          <md-card-subtitle>Today</md-card-subtitle>
-        </md-card-content>
-      </md-card>
-    </div>
-    <div class="col-md-3 col-xs-6"></div>
-    <div class="col-md-3 col-xs-6"></div>
-    <div class="col-md-3 col-xs-6"></div>
+<div class="row">
+  <div class="col-md-3 col-xs-6" *ngFor="let i of [1,2,3,4]">
+    <md-card>
+      <md-card-header>
+        <md-card-title>Visits</md-card-title>
+        <md-card-subtitle>Trend</md-card-subtitle>
+        <div md-card-avatar>
+          <i class="fa fa-pie-chart"></i>
+        </div>
+      </md-card-header>
+      <md-card-content>
+        <md-card-title>21,212</md-card-title>
+        <md-card-subtitle>Today</md-card-subtitle>
+      </md-card-content>
+    </md-card>
   </div>
-
-  <md-tab-group>
-    <md-tab label="Tab 1">Content 1</md-tab>
-    <md-tab label="Tab 2">Content 2</md-tab>
-  </md-tab-group>
+  <div class="col-md-3 col-xs-6"></div>
+  <div class="col-md-3 col-xs-6"></div>
+  <div class="col-md-3 col-xs-6"></div>
 </div>
+
+<md-tab-group>
+  <md-tab label="Tab 1">Content 1</md-tab>
+  <md-tab label="Tab 2">Content 2</md-tab>
+</md-tab-group>
