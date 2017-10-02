@@ -6,7 +6,8 @@
   .sidebar-header {
     display: flex;
     align-items: center;
-    height: 78px;
+    height: $page-header-height;
+    border-bottom: solid 1px transparent;
 
     .user-img {
       flex: 1;
@@ -51,6 +52,11 @@
         }
       }
     }
+  }
+
+  nav {
+    height: calc(100vh - #{$header-height} - #{$page-header-height});
+    overflow: auto;
   }
 
   ul {

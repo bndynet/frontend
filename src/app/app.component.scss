@@ -74,22 +74,25 @@ app {
   .btn-toggle-sidebar {
     position: absolute;
     z-index: 9999;
-    bottom: 0.5rem;
-    left: calc(#{$sidebar-width} - 20px);
+    top: calc(#{$header-height} + 20px);
+    left: calc(#{$sidebar-width} - .8rem);
     transition: left .3s;
+    width: .8rem;
+    display: block;
+    padding: 10px 2px;
+    border-radius: 4px 0 0 4px;
+    background-color: $gray-light;
 
-    i {
-      &.fa-angle-left {
-        font-size: 2rem;
-        position: relative;
-        top: -3px;
-      }
+    &:hover {
+      background-color: $primary-color;
+      color: #ffffff;
     }
   }
 
   .sidebar-collapsed {
     .btn-toggle-sidebar {
-      left: .5rem;
+      left: 0;
+      border-radius: 0 4px 4px 0;
     }
   }
 }

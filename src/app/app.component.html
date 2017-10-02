@@ -19,8 +19,9 @@
     <footer></footer>
   </md-sidenav-container>
 
-  <button md-mini-fab class="btn-toggle-sidebar" (click)="sidenav.toggle();isSidebarCollapsed=!isSidebarCollapsed;">
-    <i class="fa fa-bars" *ngIf="isSidebarCollapsed"></i>
+  <a class="btn-toggle-sidebar" mdTooltip="Toggle Sidebar" mdTooltipPosition="right"
+     (click)="sidenav.toggle();isSidebarCollapsed=!isSidebarCollapsed;">
+    <i class="fa fa-ellipsis-v" *ngIf="isSidebarCollapsed"></i>
     <i class="fa fa-angle-left" *ngIf="!isSidebarCollapsed"></i>
-  </button>
+  </a>
 </div>
