@@ -16,7 +16,7 @@ export class AppSidebarComponent implements AfterViewInit, OnInit {
   constructor(
     private appService: AppService,
   ) {
-    for(let i = 7; i > 0; i--) {
+    for (let i = 7; i > 0; i--) {
       this.daysStatus.push({
         date: new Date().setDate(new Date().getDate() - i),
         status: i % 3 === 0 || i === 1,

@@ -6,8 +6,7 @@ import { AppService } from '../app.service';
   styleUrls: ['pageHeader.component.scss'],
   templateUrl: 'pageHeader.component.html',
 })
-
-export class SharedPageHeaderComponent implements OnInit{
+export class SharedPageHeaderComponent implements OnInit {
   @Input()
   @Output()
   public title: string;
@@ -16,13 +15,15 @@ export class SharedPageHeaderComponent implements OnInit{
   public subtitle: string;
 
   constructor(
-    private appService: AppService) {
+    private appService: AppService
+  ) {
+
   }
 
   public ngOnInit() {
     this.appService.pageTitleChangeEvent.subscribe((args: any) => {
       this.title = args.title;
       this.subtitle = args.subtitle;
-    })
+    });
   }
 }

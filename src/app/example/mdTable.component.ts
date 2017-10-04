@@ -25,7 +25,9 @@ export class ExampleMdTableComponent implements OnInit {
   @ViewChild(MdPaginator) private paginator: MdPaginator;
   @ViewChild('filter') private filter: ElementRef;
 
-  constructor(private appService: AppService,) {
+  constructor(
+    private appService: AppService,
+  ) {
     this.appService.setPageTitle('Table', 'Material Table');
   }
 

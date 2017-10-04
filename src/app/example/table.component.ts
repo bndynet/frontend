@@ -22,7 +22,8 @@ export class ExampleTableComponent implements OnInit {
   constructor(private dialog: MdDialog,
               private appService: AppService,
               private appDate: AppDatePipe,
-              private definitionService: DefinitionService,) {
+              private definitionService: DefinitionService,
+  ) {
     this.appService.setPageTitle('Table', 'ng2-smart-table');
     this.settings = definitionService.getSmartTableSettings({
       title: {
