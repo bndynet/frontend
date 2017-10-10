@@ -1,10 +1,23 @@
-$primary-color: #1976D2;
-$info-color: #5bc0de;
-$success-color: #3c763d;
-$warning-color: #ff9800;
-$danger-color: #e00000;
+/**************************************/
+// Import all the tools needed to customize the theme and extract parts of it
+@import '~@angular/material/theming';
 
-$brand-color: $primary-color;
+@include mat-core();
+
+$app-primary: mat-palette($mat-blue, 800, 900, A100);
+$app-accent:  mat-palette($mat-pink);
+$app-warn: mat-palette($mat-deep-orange);
+
+$primary-color: mat-color($app-primary);
+$accent-color:  mat-color($app-accent);
+$warning-color: mat-color($app-warn);
+$danger-color:  mat-color(mat-palette($mat-red));
+$success-color: mat-color(mat-palette($mat-green));
+$text-color: #666666;
+
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
 
 $gray-base: #666666;
 $gray-darker: lighten($gray-base, 13.5%);
@@ -16,14 +29,12 @@ $gray-white: lighten($gray-base, 96%);
 
 /**************************************/
 
-$text-color: #666666;
-
 $sidebar-color: $text-color;
 $sidebar-background-color: $gray-white;
 $sidebar-active-color: $primary-color;
 $sidebar-active-background-color: $gray-lighter;
 
-$loading-bar-color: $info-color;
+$loading-bar-color: $accent-color;
 
 $header-height: 52px;
 $sidebar-width: 220px;

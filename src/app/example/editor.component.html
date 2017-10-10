@@ -1,8 +1,11 @@
-<div [froalaEditor]="editorOptions" [(froalaModel)]="editorContent"></div>
-
-<hr />
-<h2>View</h2>
-<div [froalaView]="editorContent"></div>
+<div class="row">
+  <div class="col-xs-9">
+    <div [froalaEditor]="editorOptions" [(froalaModel)]="editorContent"></div>
+  </div>
+  <div class="col-xs-3">
+    <div [froalaView]="editorContent"></div>
+  </div>
+</div>
 
 <hr />
 <h2>Source</h2>

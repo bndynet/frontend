@@ -1,9 +1,6 @@
 <div class="page-actions">
-  <button md-fab class="mat-primary" (click)="submitForm()">
+  <button md-fab (click)="submitForm()">
     <i class="fa fa-save"></i>
-  </button>
-  <button md-fab>
-    <i class="fa fa-undo"></i>
   </button>
 </div>
 
@@ -11,7 +8,7 @@
   <div class="row">
     <div class="col-xs-12">
       <md-form-field>
-        <input mdInput placeholder="Company (disabled)" disabled value="Bndy.Net">
+        <input mdInput placeholder="Company (disabled)" disabled value="http://bndy.net">
       </md-form-field>
     </div>
   </div>
@@ -37,9 +34,9 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <md-input-container>
+      <md-form-field>
         <textarea mdInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-      </md-input-container>
+      </md-form-field>
     </div>
   </div>
 

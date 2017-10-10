@@ -1,9 +1,6 @@
-/* this file will be extracted to main dist folder and is imported in index.html */
-/* This file is for setting global styles  */
-@import 'variables';
 @import 'fonts';
+@import 'variables';
 @import "~bootstrap/dist/css/bootstrap.css";
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
@@ -67,7 +64,7 @@ label {
 }
 
 /* Material */
-.mat-form-field {
+md-form-field.mat-form-field {
   width: 100%;
 }
 
@@ -81,7 +78,7 @@ label {
     height: 24px;
 
     .mat-select-placeholder.mat-floating-placeholder {
-      margin-top: 6px;
+      margin-top: 12px;
     }
   }
 }
@@ -96,34 +93,8 @@ label {
   font-size: $font-size;
 }
 
-.mat-ink-bar,
-.mat-radio-inner-circle,
-.mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary,
-.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
-.mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb,
-.mat-progress-bar-buffer {
-  background-color: $primary-color;
-}
-
-.mat-radio-checked .mat-radio-outer-circle {
-  border-color: $primary-color;
-}
-
-.mat-progress-spinner path {
-  stroke: $primary-color;
-}
-
-.mat-progress-bar-fill::after {
-  background-color: lighten($primary-color, 50%);
-}
-
-.mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
-  background-color: rgba($primary-color, .5);
-}
-
 .mat-drawer-container, .mat-cell {
   font-size: $font-size;
-  color: $text-color;
 }
 
 .mat-option,
@@ -167,7 +138,7 @@ snack-bar-container.mat-snack-bar-container {
   border-radius: 2px 2px 0 0;
 
   &.info {
-    background-color: rgba($info-color, .9);
+    background-color: rgba(#222222, .9);
   }
   &.success {
     background-color: rgba($success-color, .9);
@@ -214,6 +185,10 @@ snack-bar-container.mat-snack-bar-container {
   }
 }
 
+.full-width {
+  width: 100%;
+}
+
 /* ng2-smart-table */
 ng2-smart-table {
   table {
@@ -234,9 +209,18 @@ ng2-smart-table {
     margin: 0 1rem;
     text-align: right;
 
-    .ng2-smart-page-item {
-      a {
-        min-height: 31px;
+    .pagination {
+      & > .ng2-smart-page-item {
+        a, span {
+          height: 31px;
+        }
+
+        &.active {
+          & > span {
+            border-color: $primary-color;
+            background-color: $primary-color;
+          }
+        }
       }
     }
   }
@@ -273,7 +257,8 @@ ng2-smart-table {
 /* html editor (WYSIWYG Editor) */
 .fr-toolbar,
 .fr-popup {
-  border-color: #222222;
+  border-top-width: 2px;
+  border-color: rgba($primary-color, .8);
 
   .fr-command.fr-btn {
     color: #222222;
