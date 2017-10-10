@@ -73,7 +73,7 @@ app {
 
   .btn-toggle-sidebar {
     position: absolute;
-    z-index: 9999;
+    z-index: 99;
     top: calc(#{$header-height} + 20px);
     left: calc(#{$sidebar-width} - .8rem);
     transition: left .3s;

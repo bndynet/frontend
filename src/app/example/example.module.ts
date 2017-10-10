@@ -11,6 +11,7 @@ import {
   MdNativeDateModule,
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -21,6 +22,7 @@ import { ExampleArticleComponent } from './article.component';
 import { ExampleTableComponent } from './table.component';
 import { ExampleTableCustomRenderColumnComponent } from './tableCustomRenderColumn.component';
 import { ExampleMdTableComponent } from './mdTable.component';
+import { ExampleEditorComponent } from './editor.component';
 
 const exampleRoutes: Routes = [
   { path: 'example-grid', component: ExampleGridComponent },
@@ -29,6 +31,7 @@ const exampleRoutes: Routes = [
   { path: 'example-list', component: ExampleListComponent },
   { path: 'example-table', component: ExampleTableComponent },
   { path: 'example-md-table', component: ExampleMdTableComponent },
+  { path: 'example-editor', component: ExampleEditorComponent },
 ];
 
 @NgModule({
@@ -46,6 +49,9 @@ const exampleRoutes: Routes = [
 
     RouterModule.forChild(exampleRoutes),
 
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
+
     SharedModule,
   ],
   declarations: [
@@ -56,6 +62,7 @@ const exampleRoutes: Routes = [
     ExampleTableComponent,
     ExampleMdTableComponent,
     ExampleTableCustomRenderColumnComponent,
+    ExampleEditorComponent,
   ],
   entryComponents: [
     ExampleTableCustomRenderColumnComponent,

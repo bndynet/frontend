@@ -4,6 +4,28 @@ import { config } from './config/config';
 import { configDev } from './config/config.dev';
 import { configProd } from './config/config.prod';
 
+interface IEditorOptions {
+  height: number;
+  charCounterCount: boolean;
+  toolbarButtons: string[];
+
+  imageUploadParam: string;
+  imageUploadURL: string;
+  imageUploadParams: object;
+  imageUploadMethod: string;
+  imageMaxSize: number;
+  imageAllowedTypes: string[];
+  imageManagerLoadURL: string;
+
+  fileUploadURL: string;
+  fileAllowedTypes: string[];
+  fileMaxSize: number;
+  fileUploadMethod: string;
+  fileUploadParam: string;
+  fileUploadParams: object;
+  fileUseSelectedText: boolean;
+}
+
 export interface IAppConfigInfo {
   host?: string;
   apiEndpoint?: string;
@@ -11,6 +33,7 @@ export interface IAppConfigInfo {
   successDuration?: number;
   warningDuration?: number;
   errorDuration?: number;
+  editorOptions?: IEditorOptions;
 }
 
 export enum Environment {
@@ -19,7 +42,7 @@ export enum Environment {
 }
 
 export class AppConfig {
-  public currentConfig: IAppConfigInfo;
+  public configInfo: IAppConfigInfo;
   private configs: object = {
     dev: _.assignIn({}, config, configDev),
     prod: _.assignIn({}, config, configProd),
@@ -27,15 +50,19 @@ export class AppConfig {
 
   constructor(env?: Environment) {
     if (env) {
-      this.currentConfig = this.configs[Environment[env]] as IAppConfigInfo;
+      this.configInfo = this.configs[Environment[env]] as IAppConfigInfo;
     } else {
       const host = window.location.host.toLowerCase();
       for (const key in this.configs) {
         if (host === this.configs[key].host.toLowerCase()) {
-          this.currentConfig = this.configs[key];
+          this.configInfo = this.configs[key];
           break;
         }
       }
     }
+  }
+
+  public getWysiwygEditorOptions(): object {
+    return this.configInfo.editorOptions;
   }
 }

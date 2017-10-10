@@ -1,15 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MdButtonModule,
-  MdProgressBarModule,
-  MdSidenavModule,
-  MdIconRegistry,
-  MdSnackBarModule,
-} from '@angular/material';
-
-import 'hammerjs';
-import {
   NgModule,
   ApplicationRef
 } from '@angular/core';
@@ -23,6 +14,16 @@ import {
   PreloadAllModules
 } from '@angular/router';
 
+import {
+  MdButtonModule,
+  MdProgressBarModule,
+  MdSidenavModule,
+  MdIconRegistry,
+  MdSnackBarModule,
+} from '@angular/material';
+
+import 'hammerjs';
+import 'froala-editor/js/froala_editor.pkgd.min.js';
 /*
  * Platform and Environment providers/directives/pipes
  */

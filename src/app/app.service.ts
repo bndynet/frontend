@@ -14,7 +14,7 @@ export interface InternalStateType {
 @Injectable()
 export class AppService {
 
-  public config: IAppConfigInfo;
+  public config: AppConfig;
   @Output() public loadEvent: EventEmitter<boolean> = new EventEmitter(true);
   @Output() public pageTitleChangeEvent: EventEmitter<object> = new EventEmitter();
 
@@ -22,7 +22,7 @@ export class AppService {
     private http: Http,
     private snackBar: MdSnackBar,
   ) {
-    this.config = new AppConfig().currentConfig;
+    this.config = new AppConfig();
   }
 
   public setLoading(value: boolean): void {
@@ -81,28 +81,28 @@ export class AppService {
   public info(msg: string): MdSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open(msg, 'x', {
       extraClasses: ['info'],
-      duration: this.config.infoDuration,
+      duration: this.config.configInfo.infoDuration,
     });
   }
 
   public success(msg: string): MdSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open(msg, 'x', {
       extraClasses: ['success'],
-      duration: this.config.successDuration,
+      duration: this.config.configInfo.successDuration,
     });
   }
 
   public warning(msg: string): MdSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open(msg, 'x', {
       extraClasses: ['warning'],
-      duration: this.config.warningDuration,
+      duration: this.config.configInfo.warningDuration,
     });
   }
 
   public error(msg: string): MdSnackBarRef<SimpleSnackBar> {
     return this.snackBar.open(msg, 'x', {
       extraClasses: ['error'],
-      duration: this.config.errorDuration,
+      duration: this.config.configInfo.errorDuration,
     });
   }
 }

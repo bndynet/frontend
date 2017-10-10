@@ -11,6 +11,9 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~metismenu/dist/metisMenu.css";
 @import "~animate.css/animate.css";
 
+@import "~froala-editor/css/froala_editor.pkgd.css";
+@import "~froala-editor/css/froala_style.css";
+
 html, body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 0;
@@ -264,5 +267,15 @@ ng2-smart-table {
         color: $primary-color;
       }
     }
+  }
+}
+
+/* html editor (WYSIWYG Editor) */
+.fr-toolbar,
+.fr-popup {
+  border-color: #222222;
+
+  .fr-command.fr-btn {
+    color: #222222;
   }
 }
