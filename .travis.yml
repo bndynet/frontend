@@ -22,8 +22,6 @@ matrix:
 before_install:
   - npm install npm@5 -g
   - npm cache verify
-  - npm prune
-  - npm update
   - npm install yarn -g
 
 install:
