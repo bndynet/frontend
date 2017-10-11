@@ -24,9 +24,10 @@ before_install:
   - npm cache verify
   - npm prune
   - npm update
+  - npm install yarn -g
 
 install:
-  - npm install
+  - yarn
 
 after_install:
   - npm rebuild node-sass
@@ -39,4 +40,4 @@ before_script:
   - sleep 3
 
 script:
-  - npm run ci:travis
+  - yarn run ci:travis
