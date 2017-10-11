@@ -439,11 +439,13 @@ module.exports = function (options) {
         }
       }),
       new ProvidePlugin({
+        _: 'lodash',
         $: 'jquery',
         jquery: 'jquery',
         jQuery: 'jquery',
-        "window.jQuery": "jquery",
-        _: 'lodash',
+        'window.jQuery': 'jquery',
+        moment: 'moment',
+        'window.moment': 'moment',
       }),
       // new ProgressBarPlugin({
       //   format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds) on ' + moment().format('MMMM Do YYYY, h:mm a') + ' ',
