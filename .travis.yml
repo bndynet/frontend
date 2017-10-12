@@ -22,7 +22,7 @@ matrix:
 before_install:
   - npm install npm@5 -g
   - npm cache verify
-  - npm install yarn -g
+  - npm install yarn@0 -g
 
 install:
   - yarn
@@ -38,4 +38,4 @@ before_script:
   - sleep 3
 
 script:
-  - yarn run ci:travis
+  - npm run ci:travis
