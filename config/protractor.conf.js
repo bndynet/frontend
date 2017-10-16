@@ -29,7 +29,12 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome',
     'chromeOptions': {
-      'args': ['show-fps-counter=true']
+      'args': [
+        '--no-sandbox',
+        // '--headless',
+        // '--disable-gpu',
+        'show-fps-counter=true'
+      ]
     }
   },
 
