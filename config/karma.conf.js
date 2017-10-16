@@ -1,3 +1,5 @@
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = function (config) {
   var testWebpackConfig = require('./webpack.test.js')({ env: 'test' });
 
@@ -121,9 +123,14 @@ module.exports = function (config) {
     ],
 
     customLaunchers: {
-      ChromeTravisCi: {
+      ChromeHeadlessNoSandbox: {
         base: 'Chrome',
-        flags: ['--no-sandbox']
+        flags: [
+          '--no-sandbox',
+          '--headless',
+          '--disable-gpu',
+          '--remote-debugging-port=9222'
+        ]
       }
     },
 
@@ -134,11 +141,9 @@ module.exports = function (config) {
     singleRun: true
   };
 
-  if (process.env.TRAVIS) {
-    configuration.browsers = [
-      'ChromeTravisCi'
-    ];
-  }
+  configuration.browsers = [
+     'ChromeHeadlessNoSandbox'
+  ];
 
   config.set(configuration);
 };
