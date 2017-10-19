@@ -1,10 +1,9 @@
 import { Output, Injectable, EventEmitter } from '@angular/core';
-import { Http } from '@angular/http';
 import { MdSnackBar, MdSnackBarRef, SimpleSnackBar } from '@angular/material';
 
 import 'rxjs/add/operator/toPromise';
 
-import { IAppConfigInfo, AppConfig, Environment } from './app.config';
+import { AppConfig, Environment } from './app.config';
 import { mainMenus, sideMenus } from './app.menu';
 
 export interface InternalStateType {
@@ -19,10 +18,9 @@ export class AppService {
   @Output() public pageTitleChangeEvent: EventEmitter<object> = new EventEmitter();
 
   constructor(
-    private http: Http,
     private snackBar: MdSnackBar,
   ) {
-    this.config = new AppConfig();
+    this.config = new AppConfig(); // optional: Environment.dev, Environment.prod
   }
 
   public setLoading(value: boolean): void {
