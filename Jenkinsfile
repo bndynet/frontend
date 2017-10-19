@@ -11,12 +11,19 @@ node {
       }
 
       stage('Install dependencies') {
+        sh ''' #!/bin/bash -e
+               . ~/.nvm/nvm.sh
+               nvm --version
+        '''
+        /*
         sh 'node -v'
         sh 'npm -v'
         sh 'npm prune'
         sh 'yarn'
+        */
       }
 
+      /*
       stage('Check syntax') {
         sh 'npm run lint'
       }
@@ -29,6 +36,8 @@ node {
       stage('Build with aot') {
         sh 'npm run build:aot'
       }
+
+      */
 
       /*
       stage('Build Docker') {
