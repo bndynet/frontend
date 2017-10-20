@@ -54,10 +54,12 @@ export class AppConfig {
     } else {
       const host = window.location.host.toLowerCase();
       for (const key in this.configs) {
-        const hosts = this.configs[key].host.replace(' ', '').toLowerCase().split(';');
-        if (hosts.indexOf(host) >= 0) {
-          this.configInfo = this.configs[key];
-          break;
+        if (this.configs.hasOwnProperty(key)) {
+          const hosts = this.configs[key].host.replace(' ', '').toLowerCase().split(';');
+          if (hosts.indexOf(host) >= 0) {
+            this.configInfo = this.configs[key];
+            break;
+          }
         }
       }
     }
