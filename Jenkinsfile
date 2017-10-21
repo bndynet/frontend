@@ -6,21 +6,24 @@ node {
 
     try {
 
+      stage('Env') {
+          sh 'node -v'
+          sh 'npm -v'
+          sh 'yarn --version'
+      }
+
       stage('Pull code') {
         checkout scm
       }
 
       stage('Install dependencies') {
-        sh ''' #!/bin/bash -e
-               . ~/.nvm/nvm.sh
-               nvm --version
-        '''
-        /*
-        sh 'node -v'
-        sh 'npm -v'
-        sh 'npm prune'
-        sh 'yarn'
-        */
+        nvm('version': 'v6.11.2') {
+          sh 'node -v'
+          sh 'npm -v'
+          sh 'npm prune'
+          sh 'npm install -g yarn@0'
+          sh 'yarn'
+        }
       }
 
       /*

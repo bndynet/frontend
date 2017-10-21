@@ -12,9 +12,9 @@
 	                               $$$$$$/                                    
 	
 
-# FRONTEND [![Build Status](https://travis-ci.org/bndynet/frontend.svg?branch=master)](https://travis-ci.org/BndyNet/frontend)
+# FRONTEND [![Build Status](https://travis-ci.org/bndynet/frontend.svg?branch=master)](https://travis-ci.org/bndynet/frontend)
 
-An admin template project featuring Angular 4, Angular Material, TypeScript and Webpack 2.
+An admin template project featuring Angular 4, Angular Material, TypeScript and Webpack.
 
 ![](https://raw.githubusercontent.com/bndynet/frontend/master/screenshots/form.png)
 
@@ -37,6 +37,13 @@ yarn or yarn install
 # start the server
 yarn start
 ```
+
+### CI Service
+
+1. `docker pull bndynet/jenkins` to host your Jenkins.
+1. Create item typed **Pipeline** and **Pipeline script from SCM** in Jenkins.
+1. Fill git settings.
+1. Now, you can trigger the building.
 
 ### Misc
 **if you're in China use cnpm https://github.com/cnpm/cnpm**
